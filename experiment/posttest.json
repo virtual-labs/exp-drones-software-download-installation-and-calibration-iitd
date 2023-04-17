@@ -1,13 +1,12 @@
 {
   "version": 2.0,
-  "questions": [
-    {
-      "question": "This is a Sample Question 1?",
+  "questions": [{
+      "question": "1. What is an UAV?",
       "answers": {
-        "a": "answer1",
-        "b": "answer2",
-        "c": "answer3",
-        "d": "answer4"
+        "a": "Unmanned Aerial Vehicle",
+        "b": "Unmanned Automatic vehicle",
+        "c": "Unused Automatic Vehicle",
+        "d": "Upper Aerial Vehicle"
       },
       "explanations": {
         "a": "Explanation 1  <a href='www.google.com'>here</a>",
@@ -19,12 +18,12 @@
       "difficulty": "beginner"
     },
     {
-      "question": "This is a Sample Question 2?",
+      "question": "2. Which is Type of drone?",
       "answers": {
-        "a": "answer1",
-        "b": "answer2",
-        "c": "answer3",
-        "d": "answer4"
+        "a": "Fixed Wing",
+        "b": "VTOL",
+        "c": "Rotor Craft",
+        "d": "All of The Above"
       },
       "explanations": {
         "a": "Explanation 1  <a href='www.google.com'>here</a>",
@@ -32,7 +31,58 @@
         "c": "Explanation 2",
         "d": "Explanation 2"
       },
-      "correctAnswer": "c",
+      "correctAnswer": "d",
+      "difficulty": "beginner"
+    },
+    {
+      "question": "3. NAZA flight controller is owned by the company.",
+      "answers": {
+        "a": "DJI",
+        "b": "Hobby Wing",
+        "c": "Mission Planner",
+        "d": "Beta Flight"
+      },
+      "explanations": {
+        "a": "Explanation 1  <a href='www.google.com'>here</a>",
+        "b": "Explanation 2",
+        "c": "Explanation 2",
+        "d": "Explanation 2"
+      },
+      "correctAnswer": "a",
+      "difficulty": "beginner"
+    },
+    {
+      "question": "4. Motor orientation of quadcopter type drone is.",
+      "answers": {
+        "a": "2 clockwise, 2 anticlockwise",
+        "b": "All clockwise",
+        "c": "All anticlockwise",
+        "d": "N/A"
+      },
+      "explanations": {
+        "a": "Explanation 1  <a href='www.google.com'>here</a>",
+        "b": "Explanation 2",
+        "c": "Explanation 2",
+        "d": "Explanation 2"
+      },
+      "correctAnswer": "a",
+      "difficulty": "beginner"
+    },
+    {
+      "question": "5. Receiver’s wire is directly connected with.",
+      "answers": {
+        "a": "Motor",
+        "b": "ESC",
+        "c": "GPS",
+        "d": "Flight Controller"
+      },
+      "explanations": {
+        "a": "Explanation 1  <a href='www.google.com'>here</a>",
+        "b": "Explanation 2",
+        "c": "Explanation 2",
+        "d": "Explanation 2"
+      },
+      "correctAnswer": "d",
       "difficulty": "beginner"
     }
   ]
