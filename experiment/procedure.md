@@ -1,7 +1,7 @@
 ### Procedure
 
 #### Click Here to Enter the Lab
-
+<!--
 ### Precautions
 
 #### 1. Determine the potential hazards before beginning any work.
@@ -23,7 +23,7 @@
 #### 9. All equipment should be regularly inspected for wear or deterioration.
 
 #### 10. Know emergency exit routes.
-
+-->
 #### Click on Power button to turn On Computer.
 
 #### Click on Screen to see the Zoom view.
