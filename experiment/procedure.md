@@ -86,8 +86,6 @@
 #### Click on Install button.
 #### <img src="images/cl11.png" style="height: 500px;">
 
-#### Click on Checkbox to check Launch DJI NAZAM Assistant menu.
-
 #### Click on Finish button.
 #### <img src="images/cl12.png" style="height: 500px;">
 
