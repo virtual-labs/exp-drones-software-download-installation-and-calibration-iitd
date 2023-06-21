@@ -60,6 +60,7 @@
 #### <img src="images/cl8.png" style="height: 500px;">
 
 #### Your file start Download.
+#### <img src="images/y1.png" style="height: 500px;">
 
 #### Click to Start Installation.
 #### <img src="images/cl9.png" style="height: 500px;">
