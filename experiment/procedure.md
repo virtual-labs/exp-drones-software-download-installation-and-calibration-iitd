@@ -3,11 +3,6 @@
 #### Click Here to Enter the Lab
 #### <img src="images/en1.png" style="height: 500px;">
 
-### click the next button
-#### <img src="images/n1.png" style="height: 500px;">
-
-### click the ok button
-#### <img src="images/o1.png" style="height: 500px;">
 <!--
 ### Precautions
 
@@ -163,50 +158,80 @@
 #### <img src="images/cl30.png" style="height: 500px;">
 
 #### Click on Throttle and Yaw one by one and check the stick calibrations.
+#### <img src="images/cl31.png" style="height: 500px;">
 
 #### Click on Pitch and Radar one by one and check the stick calibrations.
+#### <img src="images/cl32.png" style="height: 500px;">
 
 #### Click on Pitch and Radar one by one and check the stick calibrations.
+#### <img src="images/cl33.png" style="height: 500px;">
 
 #### Click on three position switch one by one to check GPS, Altitude and Manual Modes.
+#### <img src="images/cl34.png" style="height: 500px;">
 
 #### Click on Gain Option.
+#### <img src="images/cl35.png" style="height: 500px;">
 
 #### Click on Basic Gain Option & Altitude Gain Option one by one to set Aircraft gains manually.
+#### <img src="images/cl36.png" style="height: 500px;">
 
 #### Click on Advance Option.
+#### <img src="images/cl37.png" style="height: 500px;">
 
 #### Select recommended Option.
+#### <img src="images/sl3.png" style="height: 500px;">
 
 #### Click on Fail Safe (F/S) Option.
+#### <img src="images/cl38.png" style="height: 500px;">
 
 #### Choose Go home and landing Option.
+#### <img src="images/choose.png" style="height: 500px;">
+
+#### <u>Test Your Memory</u>
+### Choose the option and click on the submit button
+#### <img src="images/su2.png" style="height: 500px;">
+
+#### Click on Next button.
+#### <img src="images/ne6.png" style="height: 500px;">
 
 #### Click on IOC Option.
+#### <img src="images/cl39.png" style="height: 500px;">
 
 #### Click on intelligent orientation control Option.
+#### <img src="images/cl40.png" style="height: 500px;">
 
 #### Click on Gimbal Option.
+#### <img src="images/cl41.png" style="height: 500px;">
 
 #### Click on Default button to set the device level default.
+#### <img src="images/cl42.png" style="height: 500px;">
 
 #### Click on H3/4 3D Option.
+#### <img src="images/cl43.png" style="height: 500px;">
 
 #### Click on Voltage Option.
+#### <img src="images/cl44.png" style="height: 500px;">
 
 #### Click on Default Button.
+#### <img src="images/cl45.png" style="height: 500px;">
 
 #### Click on Tools Option to do Basic and Advance calibrations.
+#### <img src="images/cl46.png" style="height: 500px;">
 
 #### Click on Advance option.
+#### <img src="images/cl47.png" style="height: 500px;">
 
 #### Click on Upgrade option.
+#### <img src="images/cl48.png" style="height: 500px;">
 
 #### Click on Info option.
+#### <img src="images/cl49.png" style="height: 500px;">
 
 #### Click on close button.
+#### <img src="images/cl50.png" style="height: 500px;">
 
 #### Click on moniter screen for zoom out.
+#### <img src="images/cl51.png" style="height: 500px;">
 
 #### Test Your Memory 
 
