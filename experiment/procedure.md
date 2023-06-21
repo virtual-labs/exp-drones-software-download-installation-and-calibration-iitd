@@ -234,9 +234,16 @@
 #### <img src="images/cl51.png" style="height: 500px;">
 
 #### Test Your Memory 
+### Choose the option and click on the submit button
+#### <img src="images/su3.png" style="height: 500px;">
 
-#### Test Your Memory 
+#### Click on Next button.
+#### <img src="images/ne7.png" style="height: 500px;">
 
 #### Software Installation & Callibration Successfully Completed
+#### Click on Next button.
+#### <img src="images/ne8.png" style="height: 500px;">
 
 #### Thank You For Performing the Experiment
+#### <img src="images/thank.png" style="height: 500px;">
+
