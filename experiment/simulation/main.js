@@ -2104,11 +2104,21 @@ function trans_voltage()
 	 document.getElementById("fullscreen31").style.visibility="visible";
 
 	 document.getElementById("mySelect").style.visibility="visible";
-	 document.getElementById("trans_v1").style.visibility="visible";
+
+   document.getElementById("mySelect").onchange = (e)=>{
+     e.target.disabled = true
+     e.target.onchange = ()=>{}
+     document.getElementById("select_box").style.visibility = "hidden"  
+
+     // show alert for next input
+     setTimeout(() => {
+      document.getElementById("trans_v1").style.visibility="visible";
+     }, 1000);
+   }
 
 	setTimeout(function()
 	  { 
-	  	// document.getElementById("mySelect").style.visibility="visible";
+      document.getElementById("select_box").style.visibility = "visible"  
 	  },1000);
 }
 
@@ -2117,6 +2127,7 @@ function trans_v1()
 {document.getElementById("trans_v1").style.visibility="hidden";
 document.getElementById("input_v1").style.visibility="visible";
 document.getElementById("trans_v2").style.visibility="visible";
+document.getElementById("input_v1").focus()
 // document.getElementById("mySelect").setAttribute("disabled", "disabled");
 }
 
@@ -2126,28 +2137,35 @@ function trans_v2()
 	var dd1;
 	v1 = document.getElementById('input_v1').value;
 	dd1 = document.getElementById('mySelect').value;
-	if(v1 == 11.30 && dd1 == "3sLP")
+  const voltages = {
+    "3sLP": 11.3,
+    "4sLP": 14.3,
+    "5sLP": 18.3,
+    "6sLP": 22,
+  }
+  let message = `Enter No Load Voltage: ${voltages[dd1]}`
+	if(v1 == 11.3 && dd1 == "3sLP")
 	{document.getElementById("trans_v2").style.visibility="hidden";
 		document.getElementById("input_v2").style.visibility="visible";
 		document.getElementById("trans_v3").style.visibility="visible";
 	}
-	else if(v1 == 14.30 && dd1 == "4sLP")
+	else if(v1 == 14.3 && dd1 == "4sLP")
 	{document.getElementById("trans_v2").style.visibility="hidden";
 		document.getElementById("input_v2").style.visibility="visible";
 		document.getElementById("trans_v3").style.visibility="visible";
 	}
-	else if(v1 == 18.30 && dd1 == "5sLP")
+	else if(v1 == 18.3 && dd1 == "5sLP")
 	{document.getElementById("trans_v2").style.visibility="hidden";
 		document.getElementById("input_v2").style.visibility="visible";
 		document.getElementById("trans_v3").style.visibility="visible";
 	}
-	else if(v1 == 22.0 && dd1 == "6sLP")
+	else if(v1 == 20 && dd1 == "6sLP")
 	{document.getElementById("trans_v2").style.visibility="hidden";
 		document.getElementById("input_v2").style.visibility="visible";
 		document.getElementById("trans_v3").style.visibility="visible";
 	}
 	else{
-		alert('Enter Input Voltage 11.30 for 3S LiPo\nEnter Input Voltage 14.30 for 4S LiPo\nEnter Input Voltage 18.30 for 5S LiPo\nEnter Input Voltage 22.0 for 6S LiPo');
+		alert(message);
 	}
 }
 
@@ -2160,7 +2178,13 @@ function trans_v3()
 	dd2 = document.getElementById('mySelect').value;
 	 
 
-
+  const voltages = {
+    "3sLP": 11,
+    "4sLP": 14,
+    "5sLP": 18,
+    "6sLP": 21,
+  }
+  let message = `Enter Loss Voltage: ${voltages[dd2]}`
 
  	
  	if(v2 == 11 && dd2 == "3sLP")
@@ -2189,7 +2213,7 @@ function trans_v3()
 	}
 
 	else{
-		alert('Enter Input Voltage 11.00 for 3S LiPo\nEnter Input Voltage 14.00 for 4S LiPo\nEnter Input Voltage 18.00 for 5S LiPo\nEnter Input Voltage 21.0 for 6S LiPo');
+		alert(message);
 	}
 }
 
@@ -2199,7 +2223,13 @@ function trans_v4()
 	var dd3;
 	v3= document.getElementById('input_v3').value;
 	dd3 = document.getElementById('mySelect').value;
-	 
+  const voltages = {
+    "3sLP": 11,
+    "4sLP": 14,
+    "5sLP": 18,
+    "6sLP": 21,
+  }
+  let message = `Enter No Load Voltage: ${voltages[dd3]}`
 	if(v3 == 11 && dd3 == "3sLP")
 	{
 		document.getElementById("trans_v4").style.visibility="hidden";
@@ -2229,7 +2259,7 @@ function trans_v4()
 	}
 	
 	else{
-		alert('Enter Input Voltage 11.00 for 3S LiPo\nEnter Input Voltage 14.00 for 4S LiPo\nEnter Input Voltage 18.00 for 5S LiPo\nEnter Input Voltage 21.0 for 6S LiPo');
+		alert(message);
 	}
 }
 
@@ -2238,8 +2268,14 @@ function trans_limit_optn1(){
 	var dd4;
 	v4= document.getElementById('input_v4').value;
 	dd4 = document.getElementById('mySelect').value;
-	
-	if(v4 == 10.30 && dd4 == "3sLP")
+	const voltages = {
+    "3sLP": 10.3,
+    "4sLP": 13.3,
+    "5sLP": 17.3,
+    "6sLP": 20,
+  }
+  let message = `Enter Loss Voltage: ${voltages[dd4]}`
+	if(v4 == 10.3 && dd4 == "3sLP")
 		{
 			document.getElementById("trans_limit_optn1").style.visibility="hidden"; 
 		 
@@ -2268,7 +2304,7 @@ function trans_limit_optn1(){
 
 		  },2500);
 		}
-	else if(v4 == 13.30 && dd4 == "4sLP")
+	else if(v4 == 13.3 && dd4 == "4sLP")
 		{
 			document.getElementById("trans_limit_optn1").style.visibility="hidden"; 
 
@@ -2297,7 +2333,7 @@ function trans_limit_optn1(){
 
       },2500);
 		}
-	else if(v4 == 17.30 && dd4 == "5sLP")
+	else if(v4 == 17.3 && dd4 == "5sLP")
 		{
 			document.getElementById("trans_limit_optn1").style.visibility="hidden"; 
 
@@ -2356,8 +2392,7 @@ function trans_limit_optn1(){
       },2500);
 		}
 	else{
-		
-		alert('Enter Input Voltage 10.30 for 3S LiPo\nEnter Input Voltage 13.30 for 4S LiPo\nEnter Input Voltage 17.30 for 5S LiPo\nEnter Input Voltage 20.0 for 6S LiPo');
+		alert(message);
 	}
 }
 

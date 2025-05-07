@@ -2041,28 +2041,28 @@ Additional tasks:<br>
 
 
 
-<img src="images/transbox.png"  id="trans_step5_roll"style="position: absolute; height: 16px; width: 70px; top: 271px; left: 851px; visibility: hidden; border: 1px dashed red;" onclick="trans_step5_roll()" />
+<img src="images/transbox.png"  id="trans_step5_roll"style="position: absolute; height: 16px; width: 70px; top: 271px; left: 851px; visibility: hidden; border: 2px dashed red;" onclick="trans_step5_roll()" />
 
 <input type="number" name="step5_input_roll" id="step5_input_roll" style="position: absolute; height: 13px; width: 63px; top: 272px; left: 852px; visibility:hidden; font-size: 11px; color: black; border: 1px solid green; outline: none;">
 
 
 
-<img src="images/transbox.png"  id="trans_step5_yaw"style="position: absolute; height: 16px; width: 70px; top: 271px; left: 938px; visibility: hidden; border: 1px dashed red;" onclick="trans_step5_yaw()" />
+<img src="images/transbox.png"  id="trans_step5_yaw"style="position: absolute; height: 16px; width: 70px; top: 271px; left: 938px; visibility: hidden; border: 2px dashed red;" onclick="trans_step5_yaw()" />
  
 <input type="number" name="step5_input_yaw" id="step5_input_yaw" style="position: absolute; height: 13px; width: 63px; top: 272px; left: 940px; visibility:hidden; font-size: 11px; color: black; border: 1px solid green; outline: none;">
 
 
-<img src="images/transbox.png"  id="trans_step5_vertical"style="position: absolute; height: 16px; width: 70px; top: 272px; left: 1027px; visibility: hidden; border: 1px dashed red;" onclick="trans_step5_vertical()" />
+<img src="images/transbox.png"  id="trans_step5_vertical"style="position: absolute; height: 16px; width: 70px; top: 272px; left: 1027px; visibility: hidden; border: 2px dashed red;" onclick="trans_step5_vertical()" />
 
 <input type="number" name="step5_input_vertical" id="step5_input_vertical" style="position: absolute; height: 13px; width: 63px; top: 272px; left: 1027px; visibility:hidden; font-size: 11px; color: black; border: 1px solid green; outline: none;">
 
 
-<img src="images/transbox.png"  id="trans_step5_alt1"style="position: absolute; height: 16px; width: 70px; top: 313px; left: 764px; visibility: hidden; border: 1px dashed red;" onclick="trans_step5_alt1()" />
+<img src="images/transbox.png"  id="trans_step5_alt1"style="position: absolute; height: 16px; width: 70px; top: 313px; left: 764px; visibility: hidden; border: 2px dashed red;" onclick="trans_step5_alt1()" />
 
 <input type="number" name="step5_input_alt1" id="step5_input_alt1" style="position: absolute; height: 13px; width: 63px; top: 313px; left: 764px; visibility:hidden; font-size: 11px; color: black; border: 1px solid green; outline: none;">
 
 
-<img src="images/transbox.png"  id="trans_step5_alt2"style="position: absolute; height: 16px; width: 70px; top: 313px; left: 852px; visibility:hidden; border: 1px dashed red;" onclick="trans_step5_alt2()" />
+<img src="images/transbox.png"  id="trans_step5_alt2"style="position: absolute; height: 16px; width: 70px; top: 313px; left: 852px; visibility:hidden; border: 2px dashed red;" onclick="trans_step5_alt2()" />
 
 <input type="number" name="step5_input_alt2" id="step5_input_alt2" style="position: absolute; height: 13px; width: 63px; top: 313px; left: 852px; visibility:hidden; font-size: 11px; color: black; border: 1px solid green; outline: none;">
 
@@ -2148,12 +2148,14 @@ Additional tasks:<br>
     height: 25px;
     border-radius: 10px;
     border: 4px dashed red; visibility: hidden; cursor: pointer;" onclick="trans_voltage()"> 
-
+<div id="select_box">
+    <p>Select the battery type.</p>
+</div>
 <select id="mySelect" style=" position: absolute;left: 788px;
     top: 297px;
     height: 16px;
     width: 156px; background-color: #e1e1e1; font-size: 11px; visibility: hidden;" onchange="myFunction()">
-  <!-- <option value="2sLP">2S LiPo</option> -->
+  <option value="Select">Select</option>
   <option value="3sLP">3S LiPo</option>
   <option value="4sLP">4S LiPo</option>
   <option value="5sLP">5S LiPo</option>
@@ -2161,9 +2163,9 @@ Additional tasks:<br>
 </select>
 
 
-      <img src="image/transbox.png"  id="trans_v1"style=" position: absolute; left: 704px; top: 349px; height: 15px; width: 45px; visibility:hidden; border: 1px dashed red;" onclick="trans_v1()" />
+      <img src="images/transbox.png"  id="trans_v1"style=" position: absolute; left: 704px; top: 349px; height: 15px; width: 45px; visibility:hidden; border: 2px dashed red;" onclick="trans_v1()" />
 
-       <input type="text" name="input_v1" id="input_v1" style=" position: absolute; height: 13px;
+       <input type="number" name="input_v1" id="input_v1" style=" position: absolute; height: 13px;
     width: 38px;   
     outline: none;
     top: 349px;
@@ -2172,22 +2174,22 @@ Additional tasks:<br>
        <img src="images/transbox.png"  id="trans_v2"style=" position: absolute; left: 768px;
     top: 348px;
     height: 17px;
-    width: 49px; visibility:hidden; border: 1px dashed red;" onclick="trans_v2()" />
+    width: 49px; visibility:hidden; border: 2px dashed red;" onclick="trans_v2()" />
 
-         <input type="text" name="input_v2" id="input_v2" style="position: absolute; height: 13px; width: 38px; top: 349px; left: 772px; outline: none; visibility:hidden; font-size: 11px; color: black; border: 1px solid green; " >
+         <input type="number" name="input_v2" id="input_v2" style="position: absolute; height: 13px; width: 38px; top: 349px; left: 772px; outline: none; visibility:hidden; font-size: 11px; color: black; border: 1px solid green; " >
 
-      <img src="images/transbox.png"  id="trans_v3"style=" position: absolute; left: 700px; top: 435px; height:17px; width: 49px; visibility:hidden; border: 1px dashed red;" onclick="trans_v3()" />
+      <img src="images/transbox.png"  id="trans_v3"style=" position: absolute; left: 700px; top: 435px; height:17px; width: 49px; visibility:hidden; border: 2px dashed red;" onclick="trans_v3()" />
 
-        <input type="text" name="input_v3" id="input_v3" style="height: 13px;
+        <input type="number" name="input_v3" id="input_v3" style="height: 13px;
     width: 38px;
     position: absolute;
     outline: none;
     top: 436px;
     left: 704px;visibility:hidden; font-size: 11px; color: red; border: 1px solid green; ">
 
-     <img src="images/transbox.png"  id="trans_v4"style=" position: absolute; left: 769px; top: 435px; height:17px; width: 49px; visibility:hidden; border: 1px dashed red;" onclick="trans_v4()" />
+     <img src="images/transbox.png"  id="trans_v4"style=" position: absolute; left: 769px; top: 435px; height:17px; width: 49px; visibility:hidden; border: 2px dashed red;" onclick="trans_v4()" />
 
-  <input type="text" name="input_v4" id="input_v4" style="height: 13px;
+  <input type="number" name="input_v4" id="input_v4" style="height: 13px;
     width: 38px;
     position: absolute;
     outline: none;
