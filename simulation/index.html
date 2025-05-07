@@ -1,0 +1,3338 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width">
+    <!--<meta name="viewport" content="width=device-width, initial-scale=1.0">-->
+
+    <title>Virtual Lab</title>
+
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@300&display=swap" rel="stylesheet">
+
+    <link href="font-awesome-4.7.0/css/font-awesome.min.css" rel="stylesheet" />
+
+    <link rel="stylesheet" href="style.css">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+	<link href="https://fonts.googleapis.com/css2?family=Acme&display=swap" rel="stylesheet">
+
+
+    <!-- <script type="text/javascript" src="jquerymin.js"></script> -->
+
+    <!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script> -->
+
+    <!-- <script src="https://kit.fontawesome.com/afa6483c49.js" crossorigin="anonymous"></script> -->
+
+   <!-- <script type="text/javascript" src="main.js"></script> -->
+
+<!-- Drag and Drop Online Link -->
+
+    <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+    <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.11.2/jquery-ui.min.js"></script>
+
+
+<!-- Drag and Drop Offline Link -->
+
+    <script type="text/javascript" src="jquery/1.11.2/jquery.min.js"></script>
+    <script type="text/javascript" src="jquery/1.11.2/jquery-ui.min.js"></script>
+
+<!-- /////////////// mobiledrag-droplink-->
+ 
+  <script type="text/javascript" src="jquery/1.11.2/draganddrop.js"></script>
+
+    <script>
+
+        var simsubscreennum=0;
+
+        var temp=0;
+
+    </script>
+<style type="text/css">
+  
+  #loading {
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  
+  position: fixed;
+  display: block;
+  /*opacity: 0.7;*/
+  background-color: #fff;
+  z-index: 9999;
+  text-align: center;
+
+}
+
+@import url('https://fonts.googleapis.com/css2?family=Acme&display=swap');
+
+#loading-image {
+    position: absolute;
+top: 30%;
+left: 40%;
+}
+
+</style>
+
+</head>
+
+
+<!-- =========================================== -->
+      <!-- Don't Write Code Above This Line -->
+
+<body style=" font-family: 'Roboto Slab', serif; ">
+<table align="center">
+  <tr>
+    <td>    
+    
+<div id="loading">
+    <img id="loading-image" src="831.svg" alt="Loading..." />
+    <center>
+        <h1 style="color: indigo;">Welcome to <i>"<strong style="color: red;">Virtual Labs</strong>"</i></h1>
+        <h2>Please wait while its loading...</h2>
+    </center>
+</div>    
+
+
+<div id="simscreen" style="overflow: hidden;">
+
+<div id="title"><h3 id="titleh3">Drone's Software Download, Installation and Calibration</h3></div>
+
+
+
+<div class="simsubscreen" id="canvas_start" style="visibility: visible; background-image: url(images/bgimag.png);" ></br>
+
+           
+           
+     <!--Blinking arrowcubox  -->
+ 
+<div class="blink_me" style="    border: 4px dashed #FFF;
+    position: absolute;
+    left: 330px;
+    top: 240px;
+    height: 100px;
+    width: 570px;
+    border-radius: 30px; cursor: pointer;"></div>
+
+<span onclick="navNextstrt()" style="position: absolute; left: 360px; top: 260px; font-family: 'Acme', sans-serif; font-size: 50px; color: white; cursor: pointer;">Click Here to Enter the Lab</span>
+ 
+
+    
+
+</div>
+
+<!-- Scene 0 -->
+
+
+
+<div class="simsubscreen" id="canvas0" style="visibility: hidden; background-image: url(images/bgimag.png); background-position: bottom;" >
+
+
+<audio id="intro1">
+        <source src="audio/quadcopter.mp3" type="audio/mpeg">
+</audio>
+
+<audio id="intro2">
+        <source src="audio/frame.mp3" type="audio/mpeg">
+</audio>
+
+<audio id="intro3">
+        <source src="audio/rotors.mp3" type="audio/mpeg">
+</audio>
+
+<audio id="intro4">
+        <source src="audio/flighttime.mp3" type="audio/mpeg">
+</audio> 
+
+<audio id="intro5">
+        <source src="audio/altitude.mp3" type="audio/mpeg">
+</audio>
+
+<audio id="intro6">
+        <source src="audio/payload.mp3" type="audio/mpeg">
+</audio>
+
+<audio id="intro7">
+        <source src="audio/landing.mp3" type="audio/mpeg">
+</audio>
+ 
+
+
+
+
+
+
+
+<div id="abttext" style="width: 1055px; height: 100px; position: absolute; top: 455px; left: 63px; background-color: #FFF; border-radius: 15px; opacity: 0.8; font-size: 18px; font-weight: bold; padding: 10px; text-align: justify; color: #000; display: none;" >
+	<b style=" font-family: 'Acme', sans-serif;font-size: 20px; ">Quadcopter</b> is an unmanned aerial vehicle (UAV) or drone with four rotors, each with a motor and propeller. A quadcopter can be manually controlled or can be autonomous. It's also called quadrotor helicopter or quadrotor. It belongs to a more general class of aerial vehicles called multicopter or multirotor. Quadcopters provide stable flight performance, making them ideal for surveillance and aerial photography. 
+  
+</div>
+
+
+<img src="images/dronefirstpage.png" id="drnfirt" style=
+"position: absolute;
+    left: 1223px;
+    top: 32px;
+    height: 185px;
+"draggable="false"/>
+
+
+<!-- <input type="button" id="btn" style="position:absolute; left: 1050px; top: 430px; cursor:pointer; font-size: 15px; background-color: steelblue; visibility: ; padding-top: 5px; color: #FFF;  padding-bottom: 5px;" value="&nbsp;come&nbsp;" onclick="dronefirstcome()"/> -->
+
+<span id="quadname" style="position: absolute; font-family: 'Acme', sans-serif; top: 60px; left: 695px; font-size: 50px; color: white; "></span>
+
+    <div style="position: absolute; font-family: 'Acme', sans-serif; left: 600px;
+    top: 155px;
+    font-size: 24px; color: black; font-weight: bolder; ">
+      
+      <p id="quadfeat1"></p> 
+      <p id="quadfeat2"></p> 
+      <p id="quadfeat3"></p>
+</div>
+      <div style="position: absolute; font-family: 'Acme', sans-serif; left: 880px;
+    top: 155px;
+    font-size: 24px; color: black; font-weight: bolder; "> 
+      <p id="quadfeat4"></p> 
+      <p id="quadfeat5"></p>     
+      <p id="quadfeat6"></p> 
+      <!-- <li></li><br> -->
+
+    </div>
+
+
+
+
+
+
+
+<!--Blinking arrowcubox  -->
+
+
+<input type="button" id="nextButton2" style="position:absolute; left: 1050px; top: 30px; cursor:pointer; font-size: 15px; background-color: steelblue; visibility: hidden; padding-top: 5px; color: #FFF; padding-bottom: 5px;" value="&nbsp;Observe&nbsp;" onclick="navNext2()"/>
+
+
+ <span class="blink_me" id="arrowintro1" style="position: absolute;
+    font-size: 40px;
+    left: 1140px;
+    top: 555px;
+    color: #ff0000;
+    visibility: hidden;" onclick="navNext2()"><strong><i class="fa fa-arrow-right"></i></strong></span>
+
+
+</div>
+
+
+
+<!-- ================================================================ -->
+
+ <!-- Scene 2 -->
+
+
+
+<div class="simsubscreen" id="canvas2" style="visibility: hidden; background-image: url(images/b4.jpg);" >
+
+<audio id="pre1">
+        <source id="preaud1" src="audio/pre1.mp3" type="audio/mpeg">
+</audio>
+
+<audio id="pre2">
+        <source id="preaud2" src="audio/pre2.mp3" type="audio/mpeg">
+</audio>
+
+<audio id="pre3">
+        <source src="audio/pre3.mp3" type="audio/mpeg">
+</audio>
+
+<audio id="pre4">
+        <source src="audio/pre4.mp3" type="audio/mpeg">
+</audio>
+
+<audio id="pre5">
+        <source src="audio/pre5.mp3" type="audio/mpeg">
+</audio>
+
+<audio id="pre6">
+        <source src="audio/pre6.mp3" type="audio/mpeg">
+</audio>
+
+<audio id="pre7">
+        <source src="audio/pre7.mp3" type="audio/mpeg">
+</audio>
+
+<audio id="pre8">
+        <source src="audio/pre8.mp3" type="audio/mpeg">
+</audio>
+
+<audio id="pre9">
+        <source src="audio/pre9.mp3" type="audio/mpeg">
+</audio>
+
+<audio id="pre10">
+        <source src="audio/pre10.mp3" type="audio/mpeg">
+</audio>
+ 
+
+<b style=" 
+    font-size: 30px;
+    position: absolute;
+    left: 520px; font-weight: 100; color:#FFF;
+    top: 25px; ">Precautions</b>
+
+<p id="prelist1" style="position: absolute; top: 70px; left: 50px; color: white; font-size: 25px; font-weight: bold; visibility: hidden ;">
+    1. Determine the potential hazards before beginning any work.
+</p>
+<p id="prelist2" style="position: absolute; top: 120px; left: 50px; color: white; font-size: 25px; font-weight: bold; visibility: hidden ;">
+    2. Know locations of laboratory safety showers, eyewashstations, and fire extinguishers.
+</p>
+<p id="prelist3" style="position: absolute; top: 170px; left: 50px; color: white; font-size: 25px; font-weight: bold; visibility: hidden ;">
+    3. No cell phone or ear phone usage in the laboratories.
+</p>
+<p id="prelist4" style="position: absolute; top: 220px; left: 50px; color: white; font-size: 25px; font-weight: bold; visibility: hidden ;">
+    4. Avoid wearing jewelry in the lab as this can pose multiple safety hazards.
+</p>
+<p id="prelist5" style="position: absolute; top: 270px; left: 50px; color: white; font-size: 25px; font-weight: bold; visibility: hidden ;">
+    5. Long hair and loose clothing must be pulled back and secured.
+</p>
+<p id="prelist6" style="position: absolute; top: 320px; left: 50px; color: white; font-size: 25px; font-weight: bold; visibility: hidden ;">
+    6. Avoid contact with energized electrical circuits.
+</p>
+<p id="prelist7" style="position: absolute; top: 370px; left: 50px; color: white; font-size: 25px; font-weight: bold; visibility: hidden ;">
+    7. Do not touch anything if your hands are wet. The "one-hand" approach is safest.
+</p>
+<p id="prelist8" style="position: absolute; top: 420px; left: 50px; color: white; font-size: 25px; font-weight: bold; visibility: hidden ;">
+    8. Do not make circuit changes or perform any wiring when power is on.
+</p>
+<p id="prelist9" style="position: absolute; top: 470px; left: 50px; color: white; font-size: 25px; font-weight: bold; visibility: hidden ;">
+    9. All equipment should be regularly inspected for wear or deterioration.
+</p>
+<p id="prelist10" style="position: absolute; top: 520px; left: 50px; color: white; font-size: 25px; font-weight: bold; visibility: hidden ;">
+    10. Know emergency exit routes.
+</p>
+<img id="blkimg" src="images/transboxblk.png" style="position: absolute;
+    left: -20px;
+    top: -0px;
+    height: 650px;
+    width: 1230px; display: none;">
+
+<p id="highlighttxt1" style="position: absolute; top: 280px; left: 50px; color: white; font-size: 35px; font-weight: bold;  display: none;"> 
+  1. Determine the potential hazards before beginning any work.
+</p>
+<p id="highlighttxt2" style="position: absolute; top: 280px; left: 50px; color: white; font-size: 35px; font-weight: bold;  display: none;"> 
+  2. Know locations of laboratory safety showers, eyewashstations, and fire extinguishers.
+</p>
+<p id="highlighttxt3" style="position: absolute; top: 280px; left: 50px; color: white; font-size: 35px; font-weight: bold;  display: none;"> 
+  3. No cell phone or ear phone usage in the laboratories.
+</p>
+<p id="highlighttxt4" style="position: absolute; top: 280px; left: 50px; color: white; font-size: 35px; font-weight: bold;  display: none;"> 
+  4. Avoid wearing jewelry in the lab as this can pose multiple safety hazards.
+</p>
+<p id="highlighttxt5" style="position: absolute; top: 280px; left: 50px; color: white; font-size: 35px; font-weight: bold;  display: none;"> 
+  5. Long hair and loose clothing must be pulled back and secured.
+</p>
+<p id="highlighttxt6" style="position: absolute; top: 280px; left: 50px; color: white; font-size: 35px; font-weight: bold;  display: none;"> 
+   6. Avoid contact with energized electrical circuits.
+</p>
+<p id="highlighttxt7" style="position: absolute; top: 280px; left: 50px; color: white; font-size: 35px; font-weight: bold;  display: none;"> 
+   7. Do not touch anything if your hands are wet. The "one-hand" approach is safest.
+</p>
+<p id="highlighttxt8" style="position: absolute; top: 280px; left: 50px; color: white; font-size: 35px; font-weight: bold;  display: none;"> 
+   8. Do not make circuit changes or perform any wiring when power is on.
+</p>
+<p id="highlighttxt9" style="position: absolute; top: 280px; left: 50px; color: white; font-size: 35px; font-weight: bold;  display: none;"> 
+   9. All equipment should be regularly inspected for wear or deterioration.
+</p>
+<p id="highlighttxt10" style="position: absolute; top: 280px; left: 50px; color: white; font-size: 35px; font-weight: bold;  display: none;"> 
+   10. Know emergency exit routes.
+</p>
+
+
+
+<!--Blinking arrowcubox  -->
+
+<input type="button" id="nextButton2" style="position:absolute; left: 1050px; top: 30px; cursor:pointer; font-size: 15px; background-color: steelblue; visibility: hidden; padding-top: 5px; color: #FFF; padding-bottom: 5px;" value="&nbsp;next&nbsp;" onclick="navNext3()"/>
+
+<input type="button" id=" " style="position:absolute; left: 1050px; top: 100px; cursor:pointer; font-size: 15px; background-color: steelblue; visibility: hidden; padding-top: 5px; color: #FFF; padding-bottom: 5px;" value="&nbsp;next&nbsp;" onclick="stop_audio()"/>
+
+
+ <span class="blink_me" id="arrowcubox2" style="position:absolute; font-size: 30px;left: 1012px; top: 28px; color:steelblue; visibility:hidden;"><strong><i class="fa fa-arrow-right"></i></strong></span>
+
+</div>
+
+
+ <!-- Scene 3 -->
+
+
+
+<div class="simsubscreen" id="canvas3" style="visibility: hidden; background-image: url(images/b4.jpg);" >
+ 
+ <audio id="aud_stp1_1">
+        <source src="audios/stp1_1.mp3" type="audio/mpeg">
+  </audio>
+
+  <audio id="aud_stp1_2">
+        <source src="audios/stp1_2.mp3" type="audio/mpeg">
+  </audio>
+
+  <audio id="aud_stp1_3">
+        <source src="audios/stp1_3.mp3" type="audio/mpeg">
+  </audio>
+
+  <audio id="aud_stp1_4">
+        <source src="audios/stp1_4.mp3" type="audio/mpeg">
+  </audio>
+
+  <audio id="aud_stp1_5">
+        <source src="audios/stp1_5.mp3" type="audio/mpeg">
+  </audio>
+
+  <audio id="aud_stp1_6">
+        <source src="audios/stp1_6.mp3" type="audio/mpeg">
+  </audio>
+
+  <audio id="aud_stp1_7">
+        <source src="audios/stp1_7.mp3" type="audio/mpeg">
+  </audio>
+
+  <audio id="aud_stp1_8">
+        <source src="audios/stp1_8.mp3" type="audio/mpeg">
+  </audio>
+
+  <audio id="aud_stp1_9">
+        <source src="audios/stp1_9.mp3" type="audio/mpeg">
+  </audio>
+
+  <audio id="aud_stp1_10">
+        <source src="audios/stp1_10.mp3" type="audio/mpeg">
+  </audio>
+
+  <audio id="aud_stp1_11">
+        <source src="audios/stp1_11.mp3" type="audio/mpeg">
+  </audio>
+
+  <audio id="aud_stp1_12">
+        <source src="audios/stp1_12.mp3" type="audio/mpeg">
+  </audio>
+
+  <audio id="aud_stp1_13">
+        <source src="audios/stp1_13.mp3" type="audio/mpeg">
+  </audio>
+
+<img src="images/table.png" style="position: absolute;
+    left: 10px;
+    top: 545px;
+    width: 1175px;
+    height: 120px;">
+
+<img src="images/table2.png" style="position: absolute;
+    left: 10px;
+    top: 410px;
+    width: 1174px;
+    height: 160px;">
+
+
+<img id="screenoff" src="images/fullpc.png" style="    position: absolute;
+    left: 70px;
+    top: 78px;
+    width: 1010px;
+    height: 470px; visibility: ;">
+ 
+<img id="syson_tb" class="blink_me" src="images/transbox.png" style="position: absolute;
+    left: 520px;
+    top: 94px;
+    width: 40px;
+    height: 20px;
+    visibility: hidden; border:3px dashed yellow;" onclick="syson()">
+
+<img id="screenon" src="images/fullpcon.png" style="    position: absolute;
+    left: 70px;
+    top: 78px;
+    width: 1010px;
+    height: 470px;visibility: hidden;">
+
+<img id="syszoom_tb" class="blink_me" src="images/transbox.png" style="position: absolute;
+    left: 640px;
+    top: 167px;
+    width: 427px;
+    height: 250px; border:0px dashed yellow; visibility: hidden; cursor: zoom-in;" onclick="syszoom()">
+
+
+<img id="fullscreen1" src="images/screenon.jpg" style="position: absolute;
+    left: 48px;
+    top: 30px;
+    width: 1098px;
+    height: 553px; visibility: hidden;">
+
+<img id="fullscreen2" src="images/shot1.jpg" style="position: absolute;
+    left: 48px;
+    top: 34px;
+    width: 1098px;
+    height: 549px; visibility: hidden;">
+
+<img id="fullscreen3" src="images/shot2.jpg" style="position: absolute;
+    left: 48px;
+    top: 34px;
+    width: 1098px;
+    height: 549px; visibility: hidden;">
+
+<img id="fullscreen4" src="images/shot4.jpg" style="position: absolute;
+    left: 48px;
+    top: 34px;
+    width: 1098px;
+    height: 549px; visibility: hidden;">
+
+<img id="fullscreenon" src="images/ledframe.png" style="position: absolute;
+    left: 40px;
+    top: 25px;
+    width: 1120px;
+    height: 610px; visibility: hidden;">
+
+
+<div id="scrollscreen3" style="overflow: scroll;
+    overflow-x: hidden; 
+    height: 370px;
+    width: 1085px;
+    position: absolute;
+    left: 57px;
+    top: 185px; visibility: hidden;">
+<img src="images/shot3.jpg" style="position: absolute;
+    left: 0px;
+    top: 0px;
+    width: 1080px; ">
+
+<img src="images/transbox.png" class="blink_me" id="bhu1" style="position: absolute;
+    left: 125px;
+    top: 32px;
+    border: 4px dashed red;
+    height: 50px;
+    width: 300px; visibility: hidden;"  onclick="djisite()">
+</div>
+
+
+<div id="scrollscreen4" style="overflow: scroll;
+    overflow-x: hidden; 
+    height: 471px;
+    width: 1086px;
+    position: absolute;
+    left: 56px;
+    top: 84px; visibility: hidden;">
+<img src="images/shot5.jpg" style="position: absolute;
+    left: 0px;
+    top: 0px;
+    width: 1080px; ">
+
+<img src="images/transbox.png" class="blink_me" id="bhu2" style="position: absolute;
+    left: 445px;
+    top: 2060px;
+    border: 4px dashed red;
+    height: 30px;
+    width: 95px;visibility: hidden;" onclick="opndwncenter()">
+
+<img src="images/transbox.png" id="hover1" style="position: absolute; left: 0px;
+    top: 1800px;
+    height: 540px; 
+    width: 1080px;" onmouseover="gostephover1()">
+
+<div id="step1_7" class="step" style=" position: absolute; 
+    left: 590px;
+    top: 2040px;
+    height: 55px;
+    width: 180px; display: none; " >
+  <span style="position: absolute; left: 5px; top: 7px; font-size: 18px; font-weight: bold;">Click on Download Center to open it.</span>
+</div>
+<span class="blink_me" id="stp7_arw" style="position: absolute;
+    font-size: 40px;
+    left: 550px;
+    top: 2050px;
+    color: #ff0000;
+    visibility: hidden;" ><strong><i class="fa fa-arrow-left"></i></strong></span>
+</div>
+
+<div id="step1_6" class="step" style=" position: absolute; 
+    left: 710px;
+    top: 212px;
+    height: 55px;
+    width: 225px; display: none; " >
+  <span style="position: absolute; left: 5px; top: 7px; font-size: 18px; font-weight: bold;">Scroll Down and click Download Center option.</span>
+</div>
+
+<img id="scrolldowngif" src="images/pressure.gif" style="position: absolute; left: 770px;
+    top: 265px; height: 120px; visibility: hidden;">
+
+<span class="blink_me" id="stp6_arw" style="position: absolute;
+    font-size: 40px;
+    left: 810px;
+    top: 275px;
+    color: #ff0000;
+    visibility: hidden;" ><strong><i class="fa fa-arrow-down"></i></strong></span>
+
+<div id="scrollscreen5" style="overflow: scroll;
+    overflow-x: hidden; 
+    height: 471px;
+    width: 1086px;
+    position: absolute;
+    left: 56px;
+    top: 84px; visibility: hidden;">
+
+<img id="sht6" src="images/shot6.jpg" style="position: absolute;
+    left: 0px;
+    top: 0px;
+    width: 1080px; ">
+
+
+<img id="sht7" src="images/shot8.jpg" style="position: absolute;
+    left: 0px;
+    top: 0px;
+    width: 1080px; ">
+
+
+
+<div id="step1_8" class="step" style=" position: absolute; 
+    left: 350px;
+    top: 430px;
+    height: 55px;
+    width: 190px; display: none; " >
+  <span style="position: absolute; left: 5px; top: 7px; font-size: 18px; font-weight: bold;">Click on DJI Assistant Series to open list.</span>
+</div>
+
+<span class="blink_me" id="stp8_arw" style="position: absolute;
+    font-size: 40px;
+    left: 300px;
+    top: 435px;
+    color: #ff0000;
+    visibility: hidden;" ><strong><i class="fa fa-arrow-left"></i></strong></span>
+
+<div id="sh7up" style="overflow: scroll;
+    overflow-x: hidden; 
+    height: 580px;
+    width: 290px;
+    position: absolute;
+    left: 0px;
+    top: 475px; visibility: hidden; ">
+
+<img src="images/shot7.jpg" style="position: absolute;
+    left: 0px;
+        top: 0px;
+    width: 299px;">
+
+
+<img src="images/transbox.png" id="hover2" style="position: absolute; left: 0px;
+    top: 540px;
+    height: 215px;
+    width: 282px; visibility: hidden;" onmouseover="gostephover2()">
+
+
+<img id="dwnpge" class="blink_me" src="images/transbox.png" style="position: absolute;
+    left: 60px;
+    top: 655px;
+    border: 4px dashed red;
+    height: 50px;
+    width: 221px; " onclick="opndwnloadpage()"> 
+
+</div>
+
+<div id="step1_9" class="step" style=" position: absolute; 
+    left: 75px;
+    top: 530px;
+    height: 75px;
+    width: 180px; display: none; " >
+  <span style="position: absolute; left: 5px; top: 7px; font-size: 18px; font-weight: bold;">Scroll down Click on NAZA M V2 Assitant Series option.</span>
+</div>
+
+<img id="scrolldowngif3" src="images/pressure.gif" style="position: absolute; left: 120px;
+    top: 610px; height: 120px; visibility: hidden;">
+
+<span class="blink_me" id="stp9_arw" style="position: absolute;
+    font-size: 40px;
+    left: 145px;
+    top: 610px;
+    color: #ff0000;
+    visibility: hidden;" ><strong><i class="fa fa-arrow-down"></i></strong></span>
+
+<img id="opnlist" class="blink_me"  src="images/transbox.png" style="position: absolute;
+    left: 60px;
+    top: 445px;
+    border: 4px dashed red;
+    height: 30px;
+    width: 225px;
+    visibility: hidden; " onclick="opnlist()">
+
+<div id="step1_11" class="step" style=" position: absolute; 
+    left: 655px;
+    top: 570px;
+    height: 33px;
+    width: 205px; display: none; " >
+  <span style="position: absolute; left: 5px; top: 7px; font-size: 18px; font-weight: bold;">Click Download Exe file.</span>
+</div>
+
+<span class="blink_me" id="stp11_arw" style="position: absolute;
+    font-size: 40px;
+    left: 750px;
+    top: 520px;
+    color: #ff0000;
+    visibility: hidden;" ><strong><i class="fa fa-arrow-up"></i></strong></span>
+
+<img src="images/transbox.png" id="hover3" style="position: absolute; left: 310px;
+    top: 370px;
+    height: 386px;
+    width: 712px;  visibility: hidden;" onmouseover="gostephover3()">
+
+    <img id="dwnfile" class="blink_me" src="images/transbox.png" style="position: absolute;
+    left: 720px;
+    top: 487px;
+    border: 4px dashed red;
+    height: 33px;
+    width: 100px; visibility: hidden;" onclick="strt_dwld()">
+ 
+<div id="step1_10" class="step" style=" position: absolute; 
+    left: 410px;
+    top: 975px;
+    height: 55px;
+    width: 225px; display: none; " >
+  <span style="position: absolute; left: 5px; top: 7px; font-size: 18px; font-weight: bold;">Scroll Up and click Download Exe file.</span>
+</div>
+
+<img id="scrolldowngif2" src="images/pressure.gif" style="position: absolute; left: 467px;
+    top: 860px; height: 120px; visibility: hidden; transform: rotate(180deg);">
+
+<span class="blink_me" id="stp10_arw" style="position: absolute;
+    font-size: 40px;
+    left: 510px;
+    top: 920px;
+    color: #ff0000;
+    visibility: hidden;" ><strong><i class="fa fa-arrow-up"></i></strong></span>
+
+</div>
+
+<img id="sht8" src="images/shot8b.jpg" style="position: absolute;
+    left: 56px;
+    top: 519px;
+    width: 1089px;
+    height: 36px; visibility: hidden;">
+
+<div id="downloader1" style="position: absolute; left: 62px;
+    top: 521px;
+    border-radius: 50%;
+    border: 4px solid #FFF;
+    width: 24px;
+    height: 24px; visibility: hidden;"></div>
+ 
+<div id="step1_12" class="step" style=" position: absolute; 
+    left: 30px;
+    top: 420px;
+    height: 30px;
+    width: 215px; display: none; " >
+  <span style="position: absolute; left: 5px; top: 7px; font-size: 18px; font-weight: bold;">Your file start Download.</span>
+</div>
+
+<span class="blink_me" id="stp12_arw" style="position: absolute;
+    font-size: 40px;
+    left: 120px;
+    top: 460px;
+    color: #ff0000;
+    visibility: hidden;" ><strong><i class="fa fa-arrow-down"></i></strong></span>
+
+<div id="step1_13" class="step" style=" position: absolute; 
+    left: 30px;
+    top: 420px;
+    height: 30px;
+    width: 215px; display: none; " >
+  <span style="position: absolute; left: 5px; top: 7px; font-size: 18px; font-weight: bold;">Click to Start Installation.</span>
+</div>
+
+<img src="images/transbox.png" id="strt_install" class="blink_me" style="position: absolute;
+    left: 52px;
+    top: 514px;
+    border: 4px dashed red;
+    height: 38px;
+    width: 190px; visibility: hidden;" onclick="navNextinstall1()">
+
+<span class="blink_me" id="stp13_arw" style="position: absolute;
+    font-size: 40px;
+    left: 120px;
+    top: 460px;
+    color: #ff0000;
+    visibility: hidden;" ><strong><i class="fa fa-arrow-down"></i></strong></span>
+
+<img id="chrome_tb" class="blink_me" src="images/transbox.png" style="position: absolute;
+    left: 65px;
+    top: 175px;
+    width: 55px;
+    height: 65px;
+    border-radius: 10px;
+    border: 4px dashed red; visibility: hidden; cursor: pointer;" onclick="openchrome()">
+
+<input id="myInput" type="text" style="position: absolute;
+    left: 400px;
+    top: 218px;
+    font-size: 17px;
+    width: 383px;
+    height: 25px;
+    outline: none;
+    border: 0px; visibility: hidden;">
+
+    <button id="myBtn" onclick="opengoogle()" style="position: absolute;
+    left: 484px;
+    top: 270px;
+    font-size: 10px;
+    height: 25px;
+    width: 102px; visibility: hidden;">Google Search</button>
+
+    <button id="myBtn2" style="position: absolute;
+    left: 595px;
+    top: 270px;
+    font-size: 10px;
+    height: 25px;
+    width: 115px; visibility: hidden;">I'm Feeling Lucky</button>
+
+
+<!-- Steps Start here -->
+<div id="step1_1" class="step" style=" position: absolute; left: 300px;
+    top: 60px; height: 79px; width: 173px; display: none; " >
+  <span style="position: absolute; left: 5px; top: 7px; font-size: 18px; font-weight: bold;">Click on Power button to turn On Computer.</span>
+</div>
+
+<span class="blink_me" id="stp1_arw" style="position: absolute;
+    font-size: 40px;
+    left: 480px;
+    top: 78px;
+    color: #ff0000;
+    visibility: hidden;" ><strong><i class="fa fa-arrow-right"></i></strong></span>
+
+<div id="step1_2" class="step" style=" position: absolute;left: 755px;
+    top: 80px;
+    height: 55px; width: 173px; display: none; " >
+  <span style="position: absolute; left: 5px; top: 7px; font-size: 18px; font-weight: bold;">Click on Screen to see the Zoom view.</span>
+</div>
+
+<span class="blink_me" id="stp2_arw" style="position: absolute;
+    font-size: 40px;
+    left: 830px;
+    top: 132px;
+    color: #ff0000;
+    visibility: hidden;" ><strong><i class="fa fa-arrow-down"></i></strong></span>
+
+<div id="step1_3" class="step" style=" position: absolute;left: 160px;
+    top: 175px;
+    height: 55px; width: 220px; display: none; " >
+  <span style="position: absolute; left: 5px; top: 7px; font-size: 18px; font-weight: bold;">Click on Google Chrome icon to open it.</span>
+</div>
+
+<span class="blink_me" id="stp3_arw" style="position: absolute;
+    font-size: 40px;
+    left: 130px;
+    top: 182px;
+    color: #ff0000;
+    visibility: hidden;" ><strong><i class="fa fa-arrow-left"></i></strong></span>
+
+<div id="step1_4" class="step" style=" position: absolute;left: 80px;
+    top: 185px;
+    height: 75px;
+    width: 220px; display: none; " >
+  <span style="position: absolute; left: 5px; top: 7px; font-size: 18px; font-weight: bold;">Type "dji.com" and Click Google Search Button otherwise Press Enter.</span>
+</div>
+
+<span class="blink_me" id="stp4_arw" style="position: absolute;
+    font-size: 40px;
+    left: 320px;
+    top: 202px;
+    color: #ff0000;
+    visibility: hidden;" ><strong><i class="fa fa-arrow-right"></i></strong></span>
+
+<div id="step1_5" class="step" style=" position: absolute; 
+    left: 550px;
+    top: 212px;
+    height: 55px;
+    width: 180px; display: none; " >
+  <span style="position: absolute; left: 5px; top: 7px; font-size: 18px; font-weight: bold;">Click on dji official website to open it.</span>
+</div>
+
+<span class="blink_me" id="stp5_arw" style="position: absolute;
+    font-size: 40px;
+    left: 500px;
+    top: 215px;
+    color: #ff0000;
+    visibility: hidden;" ><strong><i class="fa fa-arrow-left"></i></strong></span>
+<!-- Steps Stop here -->
+
+</div>
+
+
+ <!-- Scene 4 -->
+
+
+<div class="simsubscreen" id="canvas4" style="visibility:hidden; background-image: url(images/b4.jpg);" >
+
+  <audio id="aud_stp2_1">
+        <source src="audios/stp2_1.mp3" type="audio/mpeg">
+  </audio>
+
+  <audio id="aud_stp2_2">
+        <source src="audios/stp2_2.mp3" type="audio/mpeg">
+  </audio>
+
+  <audio id="aud_stp2_3">
+        <source src="audios/stp2_3.mp3" type="audio/mpeg">
+  </audio>
+
+  <audio id="aud_stp2_4">
+        <source src="audios/stp2_4.mp3" type="audio/mpeg">
+  </audio>
+
+  <audio id="aud_stp2_5">
+        <source src="audios/stp2_5.mp3" type="audio/mpeg">
+  </audio>
+
+  <audio id="aud_stp2_6">
+        <source src="audios/stp2_6.mp3" type="audio/mpeg">
+  </audio>
+
+  <audio id="aud_stp2_7">
+        <source src="audios/stp2_7.mp3" type="audio/mpeg">
+  </audio>
+
+  <audio id="aud_stp2_8">
+        <source src="audios/stp2_8.mp3" type="audio/mpeg">
+  </audio>
+
+  <audio id="aud_stp2_9">
+        <source src="audios/stp2_9.mp3" type="audio/mpeg">
+  </audio>
+
+  <audio id="aud_stp2_10">
+        <source src="audios/stp2_10.mp3" type="audio/mpeg">
+  </audio>
+
+  <audio id="aud_stp2_11">
+        <source src="audios/stp2_11.mp3" type="audio/mpeg">
+  </audio>
+
+ 
+<img src="images/table.png" style="position: absolute;
+    left: 10px;
+    top: 545px;
+    width: 1175px;
+    height: 120px;">
+
+<img src="images/table2.png" style="position: absolute;
+    left: 10px;
+    top: 410px;
+    width: 1174px;
+    height: 160px;">
+
+<img id=" " src="images/fullpc.png" style="position: absolute;
+    left: 70px;
+    top: 78px;
+    width: 1010px;
+    height: 470px; visibility: ;">
+  
+<img id=" " src="images/fullpcon.png" style=" position: absolute;
+    left: 70px;
+    top: 78px;
+    width: 1010px;
+    height: 470px;visibility: hidden;">
+
+<img id="fullscreen5" src="images/shot9.jpg" style="position: absolute;
+    left: 48px;
+    top: 34px;
+    width: 1098px;
+    height: 549px; visibility:  ;">
+
+<img id="fullscreen6" src="images/shot10.jpg" style="position: absolute;
+    left: 48px;
+    top: 34px;
+    width: 1098px;
+    height: 549px; visibility: hidden;">
+
+<img id="fullscreen7" src="images/shot11.jpg" style="position: absolute;
+    left: 48px;
+    top: 34px;
+    width: 1098px;
+    height: 549px; visibility: hidden;">
+
+<img id="fullscreen8" src="images/shot12.jpg" style="position: absolute;
+    left: 48px;
+    top: 34px;
+    width: 1098px;
+    height: 549px; visibility: hidden;">
+
+<img id="fullscreen9" src="images/shot13.jpg" style="position: absolute;
+    left: 48px;
+    top: 34px;
+    width: 1098px;
+    height: 549px; visibility: hidden;">
+
+<img id="fullscreen10" src="images/shot14.jpg" style="position: absolute;
+    left: 48px;
+    top: 34px;
+    width: 1098px;
+    height: 549px; visibility: hidden;">
+
+<img id="fullscreen11" src="images/shot15.jpg" style="position: absolute;
+    left: 48px;
+    top: 34px;
+    width: 1098px;
+    height: 549px; visibility: hidden;">
+
+    <div id="inst_txt" style="position: absolute;
+    left: 405px;
+    top: 250px;
+    height: 133px;
+    width: 362px;
+    padding: 5px;
+    font-size: 10px;
+    font-weight: bold;
+    line-height: 10px;
+    background-color: #FFF;
+    visibility: hidden;">Destination location:<br>
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;C:\Program Files (x86)\DJI Product\NAZAM Assistant_2.40<br><br>
+
+Start Menu folder:<br>
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;DJI Product\NAZAM Assistant_2.40<br><br>
+
+Additional tasks:<br>
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Additional icons:<br>
+         &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Create a desktop icon</div>
+
+<img id="fullscreen12" src="images/shot16.jpg" style="position: absolute;
+    left: 48px;
+    top: 34px;
+    width: 1098px;
+    height: 549px; visibility: hidden;">
+
+<div id="process_div1"  style="position: absolute;
+    left: 402px;
+    top: 252px;
+    width: 391px;
+    height: 16px;
+    border: 0px solid red; visibility: hidden; overflow: hidden;">
+<img id="process_img1" src="images/process_line.png" style="position: absolute;
+    left: 0px;
+    top: 0px;
+    width: 0px;
+    height: 70px; ">
+
+
+</div>
+
+<img id="fullscreen13" src="images/shot17.jpg" style="position: absolute;
+    left: 48px;
+    top: 34px;
+    width: 1098px;
+    height: 549px; visibility: hidden;"> 
+
+<img id="fullscreen14" src="images/shot18.jpg" style="position: absolute;
+    left: 48px;
+    top: 34px;
+    width: 1098px;
+    height: 549px; visibility: hidden;">   
+
+<img id="fullscreenblank" src="images/shotsmallscreen.jpg" style="position: absolute;
+    left: 48px;
+    top: 34px;
+    width: 1098px;
+    height: 549px; visibility: hidden;">
+
+<img id="fullscreenon" src="images/ledframe.png" style="position: absolute;
+    left: 40px;
+    top: 25px;
+    width: 1120px;
+    height: 610px; visibility:  ;">
+
+<img id="scrolldowngif4" src="images/pressure.gif" style="position: absolute; left: 550px;
+    top: 105px; height: 120px; visibility: hidden;">    
+
+<img id="next_zoomout" src="images/transbox.png" style="position: absolute;
+    left: 46px;
+    top: 29px;
+    height: 560px;
+    width: 1101px; visibility: hidden; cursor: zoom-out;" onclick="zoomout_Next()">
+
+<select id="ageIn" style="outline: none; position: absolute; left: 510px; top: 297px; width: 220px; font-size: 11px; height: 16px;">
+	<option value="">--Select--</option>
+    <option value="English">English</option> 
+</select>
+
+	<button id="myBtn3" onclick="install1_Next()" style="position: absolute;
+    left: 582px;
+    top: 326px;
+    font-size: 10px;
+    height: 18px;
+    width: 71px; visibility: ;">OK</button>
+
+    <button id="myBtn4" onclick=" ()" style="position: absolute;
+    left: 659px; top: 326px;
+    font-size: 10px;
+    height: 18px;
+    width: 70px; visibility: ;">Cancel</button>
+
+    <button id="myBtn5" onclick="install2_Next()" style="position: absolute;
+    left: 669px;
+    top: 416px;
+    font-size: 10px;
+    height: 17px;
+    width: 71px; visibility: hidden;">Next ></button>
+
+    <button id="myBtn6" onclick=" ()" style="position: absolute;
+    left: 750px;
+    top: 416px;
+    font-size: 10px;
+    height: 17px;
+    width: 71px; visibility: hidden;">Cancel</button>
+
+
+    <button id="myBtn7" onclick="install3_Next()" style="position: absolute;
+    left: 669px;
+    top: 416px;
+    font-size: 10px;
+    height: 17px;
+    width: 71px; visibility: hidden;">Next ></button>
+
+    <button id="myBtn8" onclick=" ()" style="position: absolute;
+    left: 750px;
+    top: 416px;
+    font-size: 10px;
+    height: 17px;
+    width: 71px; visibility: hidden;">Cancel</button>
+
+
+    <button id="myBtn9" onclick="install4_Next()" style="position: absolute;
+    left: 669px;
+    top: 416px;
+    font-size: 10px;
+    height: 17px;
+    width: 71px; visibility: hidden;">Next ></button>
+
+    <button id="myBtn10" onclick=" ()" style="position: absolute;
+    left: 750px;
+    top: 416px;
+    font-size: 10px;
+    height: 17px;
+    width: 71px; visibility: hidden;">Cancel</button>
+
+<img id="checkbox1_tb" src="images/transbox.png" style="position: absolute; left: 401px;
+    top: 265px;
+    border: 2px dashed red; 
+    height: 14px; visibility: hidden;" onclick="check1_Next()">
+
+    <button id="myBtn11" onclick="install5_Next()" style="position: absolute;
+    left: 669px;
+    top: 416px;
+    font-size: 10px;
+    height: 17px;
+    width: 71px; visibility: hidden;">Next ></button>
+
+    <button id="myBtn12" onclick="" style="position: absolute;
+    left: 750px;
+    top: 416px;
+    font-size: 10px;
+    height: 17px;
+    width: 71px; visibility: hidden;">Cancel</button>
+
+
+    <button id="myBtn13" onclick="install6_Next()" style="position: absolute;
+    left: 669px;
+    top: 416px;
+    font-size: 10px;
+    height: 17px;
+    width: 71px; visibility: hidden;">Install</button>
+
+    <button id="myBtn14" onclick=" ()" style="position: absolute;
+    left: 750px;
+    top: 416px;
+    font-size: 10px;
+    height: 17px;
+    width: 71px; visibility: hidden;">Cancel</button>
+
+
+
+<!-- <img id="checkbox2_tb" src="images/transbox.png" style="position: absolute; left: 528px;
+    top: 271px;
+    border: 2px dashed red; 
+    height: 14px; visibility: hidden;" onclick="check2_Next()"> -->
+
+    <button id="myBtn15" onclick="install8_Next()" style="position: absolute;
+    left: 669px;
+    top: 416px;
+    font-size: 10px;
+    height: 17px;
+    width: 71px; visibility: hidden;">Finish</button>
+
+    <button id="myBtn16" onclick=" ()" style="position: absolute;
+    left: 750px;
+    top: 416px;
+    font-size: 10px;
+    height: 17px;
+    width: 71px; visibility: hidden;">Cancel</button>
+
+    
+
+
+
+<!-- Steps Start here -->
+<div id="step2_1" class="step" style="position: absolute;
+    left: 270px;
+    top: 270px;
+    height: 78px;
+    width: 155px; display: none; " >
+  <span style="position: absolute; left: 5px; top: 7px; font-size: 18px; font-weight: bold;">Select Language and Click on OK button.</span>
+</div>
+
+<span class="blink_me" id="can2stp1_arw" style="position: absolute;
+    font-size: 40px;
+    left: 440px;
+    top: 275px;
+    color: #ff0000;
+    visibility: hidden;" ><strong><i class="fa fa-arrow-right"></i></strong></span>
+
+<div id="step2_2" class="step" style="position: absolute;
+    left: 460px;
+    top: 390px;
+    height: 58px;
+    width: 155px; display: none; " >
+  <span style="position: absolute; left: 5px; top: 7px; font-size: 18px; font-weight: bold;">Click on Next button.</span>
+</div>
+
+<span class="blink_me" id="can2stp2_arw" style="position: absolute;
+    font-size: 40px;
+    left: 632px;
+    top: 395px;
+    color: #ff0000;
+    visibility: hidden;" ><strong><i class="fa fa-arrow-right"></i></strong></span>
+
+
+<div id="step2_3" class="step" style="position: absolute;
+    left: 460px;
+    top: 390px;
+    height: 58px;
+    width: 155px; display: none; " >
+  <span style="position: absolute; left: 5px; top: 7px; font-size: 18px; font-weight: bold;">Click on Next button.</span>
+</div>
+
+<span class="blink_me" id="can2stp3_arw" style="position: absolute;
+    font-size: 40px;
+    left: 632px;
+    top: 395px;
+    color: #ff0000;
+    visibility: hidden;" ><strong><i class="fa fa-arrow-right"></i></strong></span>
+
+
+<div id="step2_4" class="step" style="position: absolute;
+    left: 460px;
+    top: 390px;
+    height: 58px;
+    width: 155px; display: none; " >
+  <span style="position: absolute; left: 5px; top: 7px; font-size: 18px; font-weight: bold;">Click on Next button.</span>
+</div>
+
+<span class="blink_me" id="can2stp4_arw" style="position: absolute;
+    font-size: 40px;
+    left: 632px;
+    top: 395px;
+    color: #ff0000;
+    visibility: hidden;" ><strong><i class="fa fa-arrow-right"></i></strong></span>
+
+
+
+<div id="step2_5" class="step" style="position: absolute;
+    left: 150px;
+    top: 230px;
+    height: 77px;
+    width: 195px; display: none; " >
+  <span style="position: absolute; left: 5px; top: 7px; font-size: 18px; font-weight: bold;">Click on Checkbox to check Create a desktop icon menu.</span>
+</div>
+
+<span class="blink_me" id="can2stp5_arw" style="position: absolute;
+    font-size: 40px;
+    left: 362px;
+    top: 245px;
+    color: #ff0000;
+    visibility: hidden;" ><strong><i class="fa fa-arrow-right"></i></strong></span>
+
+
+<div id="step2_6" class="step" style="position: absolute;
+    left: 460px;
+    top: 390px;
+    height: 58px;
+    width: 155px; display: none; " >
+  <span style="position: absolute; left: 5px; top: 7px; font-size: 18px; font-weight: bold;">Click on Next button.</span>
+</div>
+
+<span class="blink_me" id="can2stp6_arw" style="position: absolute;
+    font-size: 40px;
+    left: 632px;
+    top: 395px;
+    color: #ff0000;
+    visibility: hidden;" ><strong><i class="fa fa-arrow-right"></i></strong></span>
+
+
+<div id="step2_7" class="step" style="position: absolute;
+    left: 460px;
+    top: 390px;
+    height: 58px;
+    width: 155px; display: none; " >
+  <span style="position: absolute; left: 5px; top: 7px; font-size: 18px; font-weight: bold;">Click on Install button.</span>
+</div>
+
+<span class="blink_me" id="can2stp7_arw" style="position: absolute;
+    font-size: 40px;
+    left: 632px;
+    top: 395px;
+    color: #ff0000;
+    visibility: hidden;" ><strong><i class="fa fa-arrow-right"></i></strong></span>
+
+
+
+<div id="step2_8" class="step" style="position: absolute;
+    left: 220px;
+    top: 235px;
+    height: 77px;
+    width: 240px; display: none; " >
+  <span style="position: absolute; left: 5px; top: 7px; font-size: 18px; font-weight: bold;">Click on Checkbox to check Launch DJI NAZAM Assistant menu.</span>
+</div>
+
+<span class="blink_me" id="can2stp8_arw" style="position: absolute;
+    font-size: 40px;
+    left: 482px;
+    top: 250px;
+    color: #ff0000;
+    visibility: hidden;" ><strong><i class="fa fa-arrow-right"></i></strong></span>
+
+<div id="step2_9" class="step" style="position: absolute;
+    left: 460px;
+    top: 390px;
+    height: 58px;
+    width: 155px; display: none; " >
+  <span style="position: absolute; left: 5px; top: 7px; font-size: 18px; font-weight: bold;">Click on Finish button.</span>
+</div>
+
+<span class="blink_me" id="can2stp9_arw" style="position: absolute;
+    font-size: 40px;
+    left: 632px;
+    top: 395px;
+    color: #ff0000;
+    visibility: hidden;" ><strong><i class="fa fa-arrow-right"></i></strong></span>
+
+
+<div id="step2_10" class="step" style="position: absolute;
+    left: 420px;
+    top: 50px;
+    height: 55px;
+    width: 355px; display: none;" >
+  <span style="position: absolute; left: 5px; top: 7px; font-size: 18px; font-weight: bold;">Your Software is succesfully Installed Click on Computer Screen to Zoom Out.</span>
+</div>
+
+<span class="blink_me" id="can2stp10_arw" style="position: absolute;
+    font-size: 40px;
+    left: 782px;
+    top: 345px;
+    color: #ff0000;
+    visibility: hidden;" ><strong><i class="fa fa-arrow-left"></i></strong></span>
+
+
+<!-- Steps Stop here -->
+
+
+
+</div>
+
+
+
+<!-- ===================================================================== -->
+
+<!-- ====================================================================== -->
+
+
+
+<!-- ==============================CANVAS4=========================== -->
+
+ <!-- Scene 4 -->
+
+
+
+<div class="simsubscreen" id="canvas44" style="visibility: hidden; background-image: url(images/b4.jpg);" >
+
+  <audio id="aud_congo1mrk">
+        <source src="audios/congo1mrk.mp3" type="audio/mpeg">
+  </audio>
+
+
+  <div id="note_esc" style=" position: absolute; left: 0px; top: 0px; height: 609px; width: 1199px; font-size: 21px; opacity: 0.4; background-color: black;
+  " >
+
+</div>
+
+
+<!-------------------------MCQ canvas44-------------------------------->
+
+<div id="question1" style=" position: absolute; width: 845px; height: 412px; left: 155px; top: 85px;padding: 10px; border: 7px solid white; background-image: linear-gradient(45deg, #ffd8cb, #e9e4f0); " >
+
+<span style="font-size: 30px; font-weight: bold; margin-left: 320px; margin-right: 150px;" > <u>Test Your Memory</u></span>
+
+<span style="font-size: 22px; font-weight: bold; position: absolute; top: 20px;
+    left: 655px;" > Total Marks:</span>
+
+
+<span id="mrk_01" style="font-size: 22px; font-weight: bold; position: absolute; top: 20px; left: 790px; visibility: ;" > </span>
+
+<span style="position: absolute; left: 50px; top: 80px; font-size: 24px; font-weight: bold;" >Q1.</span>
+
+<span style="position: absolute; left: 90px; top: 80px; font-size: 24px; font-weight: bold;">Official website of drone.
+</span>
+
+    <br>
+
+     <span  style="position: absolute; left: 45px; top: 160px; font-size: 24px;"><strong> A </strong>&nbsp;&nbsp;<input type="radio" name="q1" id="optionA" value="Incorrect Answer">&nbsp;dji.com<br></span>
+
+       <span style="position: absolute; left: 455px; top: 160px; font-size: 24px;"><strong> B</strong> &nbsp;&nbsp;<input type="radio" name="q1" id="optionB" value="Correct Answer">&nbsp;daj.com<br></span>
+
+      <span style="position: absolute; left: 45px; top: 260px; font-size: 24px;"><strong>C </strong>&nbsp;&nbsp;<input type="radio" name="q1" id="optionC" value="Incorrect Answer">&nbsp;dij.com<br></span>
+
+      <span style="position: absolute; left: 455px; top: 260px; font-size: 24px;"><strong> D</strong> &nbsp;&nbsp;<input type="radio" name="q1" id="optionD" value="Incorrect Answer">&nbsp;dje.com<br></span>
+
+    <div id="ans_can4" style= "color:red; left: 330px; top: 338px; position: absolute; font-size: 30px; font-weight: bold;">
+    </div>
+
+    <div id="got_mrkcan4" style= "color:black; left: 305px; top: 387px; position: absolute; font-size: 22px; font-weight: bold; visibility: hidden;">Congrats !! You get "1" mark.
+    </div>
+
+    <input type="button" id="showans" style="position:absolute; left: 640px;
+    top: 340px; cursor:pointer; font-size: 19px; background-color: #501b26; font-family: 'Acme', sans-serif; padding-top: 5px; color:  #FFF; border: 3px solid white; padding-bottom: 5px;" value="&nbsp;Submit&nbsp;" onclick="ansshw_c4()"/>
+
+    <input type="button" id="nextButton4" style="position:absolute; left: 770px;
+    top: 370px; cursor:pointer; font-size: 19px; background-color: #501b26; visibility:hidden; font-family: 'Acme', sans-serif; padding-top: 5px; color:  #FFF; border: 3px solid white; padding-bottom: 5px;" value="&nbsp;Next&nbsp;" onclick="navNext5()"/>
+
+
+</div>
+
+<!-------------------------MCQ canvas44-------------------------------->
+
+
+</div>
+
+
+<!-- ==============================CANVAS44=========================== -->
+
+<!-- =================================================================== -->
+
+<!-- ===================================================================== -->
+
+<div class="simsubscreen" id="canvas4a" style="visibility: hidden; background-image: url(images/b4.jpg);" >
+
+  <audio id="aud_stp5_1">
+        <source src="audios/stp5_1.mp3" type="audio/mpeg">
+  </audio>
+
+  <audio id="aud_stp5_2">
+        <source src="audios/stp5_2.mp3" type="audio/mpeg">
+  </audio>
+
+  <audio id="aud_stp5_3">
+        <source src="audios/stp5_3.mp3" type="audio/mpeg">
+  </audio>
+
+  <audio id="aud_stp5_4">
+        <source src="audios/stp5_4.mp3" type="audio/mpeg">
+  </audio>
+
+  <audio id="aud_stp5_5">
+        <source src="audios/stp5_5.mp3" type="audio/mpeg">
+  </audio>
+
+  <audio id="aud_stp5_6">
+        <source src="audios/stp5_6.mp3" type="audio/mpeg">
+  </audio>
+
+  <audio id="aud_stp5_7">
+        <source src="audios/stp5_7.mp3" type="audio/mpeg">
+  </audio>
+
+  <audio id="aud_stp5_8">
+        <source src="audios/stp5_8.mp3" type="audio/mpeg">
+  </audio>
+
+  <audio id="aud_stp5_9">
+        <source src="audios/stp5_9.mp3" type="audio/mpeg">
+  </audio>
+
+  <audio id="aud_stp5_10">
+        <source src="audios/stp5_10.mp3" type="audio/mpeg">
+  </audio>
+
+
+  <audio id="aud_stp5_11">
+        <source src="audios/stp5_11.mp3" type="audio/mpeg">
+  </audio>
+
+  <audio id="aud_stp5_12">
+        <source src="audios/stp5_12.mp3" type="audio/mpeg">
+  </audio>
+
+  <audio id="aud_stp5_13">
+        <source src="audios/stp5_13.mp3" type="audio/mpeg">
+  </audio>
+
+  <audio id="aud_stp5_14">
+        <source src="audios/stp5_14.mp3" type="audio/mpeg">
+  </audio>
+
+  <audio id="aud_stp5_15">
+        <source src="audios/stp5_15.mp3" type="audio/mpeg">
+  </audio>
+
+  <audio id="aud_stp5_16">
+        <source src="audios/stp5_16.mp3" type="audio/mpeg">
+  </audio>
+
+  <audio id="aud_stp5_17">
+        <source src="audios/stp5_17.mp3" type="audio/mpeg">
+  </audio>
+
+  <audio id="aud_stp5_18">
+        <source src="audios/stp5_18.mp3" type="audio/mpeg">
+  </audio>
+
+  <audio id="aud_stp5_19">
+        <source src="audios/stp5_19.mp3" type="audio/mpeg">
+  </audio>
+
+  <audio id="aud_stp5_20">
+        <source src="audios/stp5_20.mp3" type="audio/mpeg">
+  </audio>
+
+
+
+  <audio id="aud_stp5_21">
+        <source src="audios/stp5_21.mp3" type="audio/mpeg">
+  </audio>
+
+  <audio id="aud_stp5_22">
+        <source src="audios/stp5_22.mp3" type="audio/mpeg">
+  </audio>
+
+  <audio id="aud_stp5_23">
+        <source src="audios/stp5_23.mp3" type="audio/mpeg">
+  </audio>
+
+  <audio id="aud_stp5_24">
+        <source src="audios/stp5_24.mp3" type="audio/mpeg">
+  </audio>
+
+  <audio id="aud_stp5_25">
+        <source src="audios/stp5_25.mp3" type="audio/mpeg">
+  </audio>
+
+  <audio id="aud_stp5_26">
+        <source src="audios/stp5_26.mp3" type="audio/mpeg">
+  </audio>
+
+  <audio id="aud_stp5_27">
+        <source src="audios/stp5_27.mp3" type="audio/mpeg">
+  </audio>
+
+  <audio id="aud_stp5_28">
+        <source src="audios/stp5_28.mp3" type="audio/mpeg">
+  </audio>
+
+  <audio id="aud_stp5_29">
+        <source src="audios/stp5_29.mp3" type="audio/mpeg">
+  </audio>
+
+  <audio id="aud_stp5_30">
+        <source src="audios/stp5_30.mp3" type="audio/mpeg">
+  </audio>
+
+
+
+  <audio id="aud_stp5_31">
+        <source src="audios/stp5_31.mp3" type="audio/mpeg">
+  </audio>
+
+  <audio id="aud_stp5_32">
+        <source src="audios/stp5_32.mp3" type="audio/mpeg">
+  </audio>
+
+  <audio id="aud_stp5_33">
+        <source src="audios/stp5_33.mp3" type="audio/mpeg">
+  </audio>
+
+  <audio id="aud_stp5_34">
+        <source src="audios/stp5_34.mp3" type="audio/mpeg">
+  </audio>
+
+  <audio id="aud_stp5_35">
+        <source src="audios/stp5_35.mp3" type="audio/mpeg">
+  </audio>
+
+  <audio id="aud_stp5_36">
+        <source src="audios/stp5_36.mp3" type="audio/mpeg">
+  </audio>
+
+  <audio id="aud_stp5_37">
+        <source src="audios/stp5_37.mp3" type="audio/mpeg">
+  </audio>
+
+  <audio id="aud_stp5_38">
+        <source src="audios/stp5_38.mp3" type="audio/mpeg">
+  </audio>
+
+  <audio id="aud_stp5_39">
+        <source src="audios/stp5_39.mp3" type="audio/mpeg">
+  </audio>
+
+  <audio id="aud_stp5_40">
+        <source src="audios/stp5_40.mp3" type="audio/mpeg">
+  </audio>
+
+  <audio id="aud_stp5_41">
+        <source src="audios/stp5_41.mp3" type="audio/mpeg">
+  </audio>
+
+  <audio id="aud_stp5_42">
+        <source src="audios/stp5_42.mp3" type="audio/mpeg">
+  </audio>
+
+  <audio id="aud_stp5_43">
+        <source src="audios/stp5_43.mp3" type="audio/mpeg">
+  </audio>
+
+
+ 
+<img src="images/table.png" style="position: absolute;
+    left: 20px;
+    top: 533px;
+    width: 1155px;
+    height: 120px;">
+
+<img src="images/table2.png" style="position: absolute;
+    left: 10px;
+    top: 410px;
+    width: 1174px;
+    height: 160px;">
+
+<img src="images/fullpcon1.png" style="    position: absolute;
+        left: 20px;
+    top: 75px;
+    width: 1100px;
+    height: 470px;visibility:  ;">
+
+<img src="images/transbox.png"  id="bhu3" style="position: absolute; left: 652px;
+    top: 167px;
+    height: 250px;
+    width: 440px; cursor: zoom-in; visibility: hidden;" onclick="install9_Next()">
+
+<div id="step2_11" class="step" style="position: absolute;
+           left: 785px;
+    top: 40px;
+    height: 75px;
+    width: 180px; display: none;" >
+  <span style="position: absolute; left: 5px; top: 7px; font-size: 18px; font-weight: bold;">Click on computer screen to see the zoom view.</span>
+</div>
+
+<span class="blink_me" id="can2stp11_arw" style="position: absolute;
+    font-size: 40px;
+        left: 865px;
+    top: 120px;
+    color: #ff0000;
+    visibility: hidden;" ><strong><i class="fa fa-arrow-down"></i></strong></span>
+
+</div>
+
+
+<div class="simsubscreen" id="canvas5" style="visibility: hidden; background-image: url(images/b4.jpg);" >
+ 
+
+<img src="images/table.png" style="position: absolute;
+    left: 20px;
+    top: 533px;
+    width: 1155px;
+    height: 120px;">
+
+<img src="images/table2.png" style="position: absolute;
+    left: 10px;
+    top: 410px;
+    width: 1174px;
+    height: 160px;">
+
+<img src="images/fullpcon1.png" style=" position: absolute;
+    left: 20px;
+    top: 75px;
+    width: 1100px;
+    height: 470px;visibility:  ;">
+
+<!-- background section strt -->
+<img src="images/shot20bg.jpg" style="position: absolute;
+    left: 345px;
+    top: 60px;
+    width: 835px;
+    height: 498px; "> 
+<img src="images/shot20back.jpg" style="position: absolute;
+    left: 345px;
+    top: 60px;
+    height: 308px; ">
+<img src="images/shot20back2.jpg" style="position: absolute;
+        left: 345px;
+    top: 556px;
+    width: 835px;
+    height: 24px; ">
+
+<!-- background section end-->
+
+<img id="fullscreen15" src="images/shot19.png" style="position: absolute;
+    left: 510px;
+    top: 145px;
+    width: 496px;
+    height: 320px; visibility: hidden;"> 
+
+<img id="fullscreen16" src="images/shot20.png" style="position: absolute;
+    left: 435px;
+    top: 65px;
+     height: 496px; visibility: hidden;">
+
+<img id="fullscreen17" src="images/shot21.png" style="position: absolute;
+    left: 435px;
+    top: 65px;
+     height: 496px; visibility: hidden;">
+
+
+<img id="fullscreen18" src="images/shot22.png" style="position: absolute;
+    left: 435px;
+    top: 65px;
+   height: 496px; visibility: hidden;">
+
+<img id="fullscreen19" src="images/motertest.png" style="position: absolute;
+    left: 600px;
+    top: 225px;
+    height: 235px; visibility: hidden;">
+
+<img id="fullscreen20" src="images/shot23.png" style="position: absolute;
+    left: 435px;
+    top: 65px;
+    height: 496px; visibility: hidden;">
+
+<img id="fullscreen21" src="images/shot24.png" style="position: absolute;
+    left: 435px;
+    top: 65px;
+    height: 496px; visibility: hidden;">
+
+<img id="fullscreen22" src="images/shot25.png" style="position: absolute;
+    left: 435px;
+    top: 65px;
+    height: 496px; visibility: hidden;">
+
+<img id="fullscreen23" src="images/shot26.png" style="position: absolute;
+    left: 435px;
+    top: 65px;
+    height: 496px; visibility: hidden;">
+
+<img id="fullscreen24" src="images/shot27.png" style="position: absolute;
+    left: 435px;
+    top: 65px;
+    height: 496px; visibility: hidden;">
+
+<img id="fullscreen25" src="images/shot28.png" style="position: absolute;
+    left: 435px;
+    top: 65px;
+    height: 496px; visibility: hidden;">
+
+<img id="fullscreen26" src="images/shot29.png" style="position: absolute;
+    left: 435px;
+    top: 65px;
+     height: 496px; visibility: hidden;">
+
+<img id="fullscreen27" src="images/shot30.png" style="position: absolute;
+    left: 435px;
+    top: 65px;
+     height: 496px; visibility: hidden;">
+
+<img id="fullscreen28" src="images/shot31.png" style="position: absolute;
+    left: 435px;
+    top: 65px;
+    height: 496px; visibility: hidden;">
+
+<img id="fullscreen29" src="images/shot32.png" style="position: absolute;
+    left: 435px;
+    top: 65px;
+   height: 496px; visibility: hidden;">
+
+<img id="fullscreen30" src="images/shot33.png" style="position: absolute;
+    left: 435px;
+    top: 65px;
+   height: 496px; visibility: hidden;">    
+    
+<img id="fullscreen31" src="images/shot34.png" style="position: absolute;
+    left: 435px;
+    top: 65px;
+    height: 496px; visibility: hidden;"> 
+    
+<img id="fullscreen32" src="images/shot35.png" style="position: absolute;
+    left: 435px;
+    top: 65px;
+    height: 496px; visibility: hidden;"> 
+    
+<img id="fullscreen33" src="images/shot36.png" style="position: absolute;
+    left: 435px;
+    top: 65px;
+    height: 496px; visibility: hidden;"> 
+
+    
+<img id="fullscreen34" src="images/shot37.png" style="position: absolute;
+    left: 435px;
+    top: 65px;
+    height: 496px; visibility: hidden;"> 
+
+    
+<img id="fullscreen35" src="images/shot38.png" style="position: absolute;
+    left: 435px;
+    top: 65px;
+    /* width: 920px; */
+    height: 496px; visibility: hidden;"> 
+
+    
+<img id="fullscreen36" src="images/shot39.png" style="position: absolute;
+    left: 435px;
+    top: 65px;
+    height: 496px; visibility: hidden;"> 
+
+    
+<img id="fullscreen37" src="images/shot40.png" style="position: absolute;
+    left: 435px;
+    top: 65px;
+    height: 496px; visibility: hidden;"> 
+
+<img id="m1_rotate" src="images/bluerotate.png" style="position: absolute;
+    left: 799px;
+    top: 245px;
+    height: 55px; animation: spinl 1s infinite linear; visibility: hidden;">
+
+<img id="m2_rotate" src="images/redrotate.png" style="position: absolute;
+    left: 657px;
+    top: 245px;
+    height: 55px; animation: spinr 1s infinite linear; visibility: hidden;">
+
+<img id="m3_rotate" src="images/bluerotate.png" style="position: absolute;
+    left: 655px;
+    top: 385px;
+    height: 55px; animation: spinl 1s infinite linear; visibility: hidden;">
+
+<img id="m4_rotate" src="images/redrotate.png" style="position: absolute;
+    left: 800px;
+    top: 388px;
+    height: 55px; animation: spinr 1s infinite linear; visibility: hidden;">
+
+<img id="scrn_16point1" src="images/point2.png" style="position: absolute; left: 574px; top: 396px; height: 10px; visibility: hidden;">
+
+<img id="scrn_16point2" src="images/point2.png" style="position: absolute; left: 574px; top: 420px; height: 10px; visibility: hidden;">
+
+<img id="scrn_16point3" src="images/point2.png" style="position: absolute; left: 574px; top: 442px; height: 10px; visibility: hidden;">
+
+<img id="scrn_16point4" src="images/point2.png" style="position: absolute; left: 574px; top: 463px; height: 10px; visibility: hidden;">
+
+<div id="point_val1" style="position: absolute; left: 642px; top: 395px; font-size: 10px; background-color: #FFF; font-weight: bold; visibility: hidden;">40</div>
+
+<div id="point_val2" style="position: absolute; left: 642px; top: 438px; font-size: 10px; background-color: #FFF; font-weight: bold; visibility: hidden;">20</div>
+
+<div id="point_val3" style="position: absolute; left: 639px; top: 416px; font-size: 10px; background-color: #FFF; font-weight: bold; visibility: hidden;">-10</div>
+
+<div id="point_val4" style="position: absolute; left: 642px; top: 460px; font-size: 10px; background-color: #FFF; font-weight: bold; visibility: hidden;">30</div>
+
+<img id="scrn_21point1" src="images/point2.png" style="position: absolute; left: 773px; top: 276px; height: 12px; visibility: hidden;">
+
+<img id="scrn_21point2" src="images/point2.png" style="position: absolute; left: 773px; top: 303px; height: 12px; visibility: hidden;">
+
+<img id="scrn_21point3" src="images/point2.png" style="position: absolute; left: 773px; top: 328px; height: 12px; visibility: hidden;">
+
+<img id="scrn_21point4" src="images/point2.png" style="position: absolute; left: 773px; top: 355px; height: 12px; visibility: hidden;">
+
+<img id="scrn_21point5" src="images/point1.png" style="position: absolute; left: 775px; top: 450px; height: 15px; visibility: hidden;">
+
+<img id="red_light" src="images/redlight.png" style="position: absolute;
+    left: 464px;
+    top: 527px;
+    width: 10px;
+    height: 10px; visibility: hidden;">
+
+<img class="blink_me2" id="blue_light" src="images/bluelight.png" style="position: absolute;
+    left: 487px;
+    top: 527px;
+    width: 10px;
+    height: 10px; visibility: hidden;">
+
+
+<img id="fullscreenon" src="images/ledframe.png" style="position: absolute;
+    left: 340px;
+    top: 55px;
+        height: 575px;
+    width: 850px; visibility:  ;">
+
+<img id="fullscreenon" src="images/remote1.png" style="position: absolute;
+    left: 20px;
+    top: 210px;
+    height: 330px; visibility: ;">
+
+<img id="remotescreen1" src="images/connectionok.png" style="position: absolute;
+    left: 20px;
+    top: 210px;
+    height: 330px; visibility:  hidden;">
+    
+<img id="remoteyaw1" src="images/remote-left_down.png" style="position: absolute;
+    left: 20px;
+    top: 210px;
+    height: 330px; visibility: hidden;">
+
+<img id="remoteyaw2" src="images/remote-left_up.png" style="position: absolute;
+    left: 20px;
+    top: 210px;
+    height: 330px; visibility: hidden;">
+    
+<img id="remoteyaw3" src="images/remote-right_left.png" style="position: absolute;
+    left: 20px;
+    top: 210px;
+    height: 330px; visibility: hidden;">
+    
+<img id="remoteyaw4" src="images/remote-right_right.png" style="position: absolute;
+    left: 20px;
+    top: 210px;
+    height: 330px; visibility: hidden;">  
+          
+<img id="remoteonbutton" src="images/powerbutton.png" style="position: absolute;
+        left: 257px;
+    top: 472px;
+    height: 53px;
+    width: 35px; visibility:  hidden;">
+
+<img id="remotegpsbutton_up" src="images/remoteup.png" style="position: absolute;
+     left: 249px;
+    top: 251px;
+    height: 46px;
+    width: 42px; visibility:  hidden;">
+
+<img id="remotegpsbutton1" src="images/remotebutton.png" style="position: absolute;
+        left: 261px;
+    top: 252px;
+    height: 38px; 
+    transform-origin: bottom;
+    transform: rotateX(60deg); visibility:  hidden;">
+
+<img id="remotegpsbutton2" src="images/remotebutton.png" style="position: absolute;
+        left: 261px;
+    top: 252px;
+    height: 38px; 
+    transform-origin: bottom;
+    transform: rotateX(0deg); visibility:  hidden;">
+
+<img id="remotegps_tb1" class="blink_me" src="images/transbox.png" style="position: absolute;
+    left: 248px;
+    top: 250px;
+    width: 33px;
+    height: 53px;
+    border-radius: 10px;
+    border: 4px dashed red; visibility: hidden; cursor: pointer;" onclick="remotegps_sw1()">
+
+<img id="remotegps_tb2" class="blink_me" src="images/transbox.png" style="position: absolute;
+    left: 248px;
+    top: 250px;
+    width: 33px;
+    height: 53px;
+    border-radius: 10px;
+    border: 4px dashed red; visibility: hidden; cursor: pointer;" onclick="remotegps_sw2()">
+
+<img id="remotepower_tb" class="blink_me" src="images/transbox.png" style="position: absolute;
+    left: 254px;
+    top: 470px;
+    width: 33px;
+    height: 53px;
+    border-radius: 10px;
+    border: 4px dashed red; visibility: hidden; cursor: pointer;" onclick="remoteon()">
+
+<img id="basic_tb" class="blink_me" src="images/transbox.png" style="position: absolute;
+    left: 535px;
+    top: 105px;
+    width: 55px;
+    height: 55px;
+    border-radius: 10px;
+    border: 4px dashed red; visibility: hidden; cursor: pointer;" onclick="basic_optn()">
+
+<img id="basic_tb2" class="blink_me" src="images/transbox.png" style="position: absolute;
+    left: 778px;
+    top: 215px;
+    width: 85px;
+    height: 85px;
+    border-radius: 10px;
+    border: 4px dashed red; visibility: hidden; cursor: pointer;" onclick="basic_optn2()">
+
+<img id="basic_tb3" class="blink_me" src="images/transbox.png" style="position: absolute;
+    left: 880px;
+    top: 480px;
+    width: 70px;
+    height: 25px;
+    border-radius: 10px;
+    border: 4px dashed red; visibility: hidden; cursor: pointer;" onclick="basic_motertest()">
+
+<img id="m1check_tb" class="blink_me" src="images/transbox.png" style="position: absolute;
+    left: 801px;
+    top: 245px;
+    height: 45px;
+    border-radius: 50px;
+    border: 4px dashed red; visibility: hidden; cursor: pointer;" onclick="basic_m1test()">
+
+<img id="m2check_tb" class="blink_me" src="images/transbox.png" style="position: absolute;
+    left: 655px;
+    top: 245px;
+    height: 45px;
+    border-radius: 50px;
+    border: 4px dashed red; visibility: hidden; cursor: pointer;" onclick="basic_m2test()">
+
+<img id="m3check_tb" class="blink_me" src="images/transbox.png" style="position: absolute;
+    left: 660px;
+    top: 385px;
+    height: 45px;
+    border-radius: 50px;
+    border: 4px dashed red; visibility: hidden; cursor: pointer;" onclick="basic_m3test()">
+
+<img id="m4check_tb" class="blink_me" src="images/transbox.png" style="position: absolute;
+    left: 800px;
+    top: 390px;
+    height: 45px;
+    border-radius: 50px;
+    border: 4px dashed red; visibility: hidden;cursor: pointer;" onclick="basic_m4test()">
+
+
+<img id="mounting_tb1" class="blink_me" src="images/transbox.png" style="position: absolute;
+    left: 530px;
+    top: 165px;
+    width: 60px;
+    height: 31px;
+    border-radius: 10px;
+    border: 4px dashed red; visibility: hidden; cursor: pointer;" onclick="mounting_optn()">
+
+<img id="mounting_tb2" class="blink_me" src="images/transbox.png" style="position: absolute;
+    left: 1022px;
+    top: 480px;
+    width: 70px;
+    height: 25px;
+    border-radius: 10px;
+    border: 4px dashed red; visibility: hidden; cursor: pointer;" onclick="mounting_deflt()">
+
+<img id="mounting_tb3" class="blink_me" src="images/transbox.png" style="position: absolute;
+    left: 593px;
+    top: 167px;
+    width: 60px;
+    height: 25px;
+    border-radius: 10px;
+    border: 4px dashed red; visibility: hidden; cursor: pointer;" onclick="rc()">
+
+<img id="trans_rcstrt" class="blink_me" src="images/transbox.png" style="position: absolute;
+    left: 832px;
+    top: 366px;
+    width: 60px;
+    height: 25px;
+    border-radius: 10px;
+    border: 4px dashed red; visibility: hidden; cursor: pointer;" onclick="rcstrt()">
+
+<img id="trans_gain_optn" class="blink_me" src="images/transbox.png" style="position: absolute; left: 655px; top: 167px; width: 60px; height: 25px; border-radius: 10px; border: 4px dashed red; visibility: hidden; cursor: pointer;" onclick="trans_gain()">
+
+<input type="number" name="step5_input" id="step5_input" style="position: absolute; height: 13px; width: 63px; top: 272px; left: 764px; visibility:hidden; font-size: 11px; color: black; border: 1px solid green; outline: none;" >
+
+
+
+<img src="images/transbox.png"  id="trans_step5_roll"style="position: absolute; height: 16px; width: 70px; top: 271px; left: 851px; visibility: hidden; border: 2px dashed red;" onclick="trans_step5_roll()" />
+
+<input type="number" name="step5_input_roll" id="step5_input_roll" style="position: absolute; height: 13px; width: 63px; top: 272px; left: 852px; visibility:hidden; font-size: 11px; color: black; border: 1px solid green; outline: none;">
+
+
+
+<img src="images/transbox.png"  id="trans_step5_yaw"style="position: absolute; height: 16px; width: 70px; top: 271px; left: 938px; visibility: hidden; border: 2px dashed red;" onclick="trans_step5_yaw()" />
+ 
+<input type="number" name="step5_input_yaw" id="step5_input_yaw" style="position: absolute; height: 13px; width: 63px; top: 272px; left: 940px; visibility:hidden; font-size: 11px; color: black; border: 1px solid green; outline: none;">
+
+
+<img src="images/transbox.png"  id="trans_step5_vertical"style="position: absolute; height: 16px; width: 70px; top: 272px; left: 1027px; visibility: hidden; border: 2px dashed red;" onclick="trans_step5_vertical()" />
+
+<input type="number" name="step5_input_vertical" id="step5_input_vertical" style="position: absolute; height: 13px; width: 63px; top: 272px; left: 1027px; visibility:hidden; font-size: 11px; color: black; border: 1px solid green; outline: none;">
+
+
+<img src="images/transbox.png"  id="trans_step5_alt1"style="position: absolute; height: 16px; width: 70px; top: 313px; left: 764px; visibility: hidden; border: 2px dashed red;" onclick="trans_step5_alt1()" />
+
+<input type="number" name="step5_input_alt1" id="step5_input_alt1" style="position: absolute; height: 13px; width: 63px; top: 313px; left: 764px; visibility:hidden; font-size: 11px; color: black; border: 1px solid green; outline: none;">
+
+
+<img src="images/transbox.png"  id="trans_step5_alt2"style="position: absolute; height: 16px; width: 70px; top: 313px; left: 852px; visibility:hidden; border: 2px dashed red;" onclick="trans_step5_alt2()" />
+
+<input type="number" name="step5_input_alt2" id="step5_input_alt2" style="position: absolute; height: 13px; width: 63px; top: 313px; left: 852px; visibility:hidden; font-size: 11px; color: black; border: 1px solid green; outline: none;">
+
+
+<img id="advance_tb" class="blink_me" src="images/transbox.png" style="position: absolute;
+    left: 595px;
+    top: 105px;
+    width: 55px;
+    height: 55px;
+    border-radius: 10px;
+    border: 4px dashed red; visibility: hidden; cursor: pointer;" onclick="trans_advance()">
+
+<img id="recomm_tb" class="blink_me" src="images/transbox.png" style="position: absolute;
+    left: 834px;
+    top: 247px;
+    width: 85px;
+    height: 44px;
+    border-radius: 10px;
+    border: 4px dashed red; visibility: hidden; cursor: pointer;" onclick="recomm()">
+
+
+<img id="fs_tb" class="blink_me" src="images/transbox.png" style="position: absolute;
+    top: 167px;
+    left: 530px;
+    width: 60px;
+    height: 25px;
+    border-radius: 10px;
+    border: 4px dashed red; visibility: hidden; cursor: pointer;" onclick="trans_fs()">
+
+<img id="gohome_tb" class="blink_me" src="images/transbox.png" style="position: absolute;
+    top: 217px;
+    left: 869px; width: 140px;
+    height: 25px;
+    border-radius: 10px;
+    border: 4px dashed red; visibility: hidden; cursor: pointer;" onclick="trans_gohome()">
+
+<img id="ios_tb" class="blink_me" src="images/transbox.png" style="position: absolute;
+    top: 167px;
+    left: 593px;
+    width: 60px;
+    height: 25px;
+    border-radius: 10px;
+    border: 4px dashed red; visibility: hidden; cursor: pointer;" onclick="trans_ios()">
+
+<img id="ioscheck_tb" class="blink_me" src="images/transbox.png" style="position: absolute;
+    top: 205px;
+    left: 660px;
+    width: 157px;
+    height: 22px;
+    border-radius: 10px;
+    border: 4px dashed red; visibility: hidden; cursor: pointer;" onclick="ioscheck_tb()">
+
+
+<img id="gimbal_tb" class="blink_me" src="images/transbox.png" style="position: absolute;
+    top: 167px;
+    left: 655px;
+    width: 60px;
+    height: 25px;
+    border-radius: 10px;
+    border: 4px dashed red; visibility: hidden; cursor: pointer;" onclick="trans_gimbal()">
+
+
+<img id="gimdef_tb" class="blink_me" src="images/transbox.png" style="position: absolute;
+    top: 480px;
+    left: 1024px;
+    width: 66px;
+    height: 25px;
+    border-radius: 10px;
+    border: 4px dashed red; visibility: hidden; cursor: pointer;" onclick="gimbaldefalt()">
+
+<img id="h34_tb" class="blink_me" src="images/transbox.png" style="position: absolute;
+    top: 167px;
+    left: 718px;
+    width: 60px;
+    height: 25px;
+    border-radius: 10px;
+    border: 4px dashed red; visibility: hidden; cursor: pointer;" onclick="trans_h34()">
+
+<img id="voltage_tb" class="blink_me" src="images/transbox.png" style="position: absolute;
+    top: 167px;
+    left: 780px;
+    width: 60px;
+    height: 25px;
+    border-radius: 10px;
+    border: 4px dashed red; visibility: hidden; cursor: pointer;" onclick="trans_voltage()"> 
+<div id="select_box">
+    <p>Select the battery type.</p>
+</div>
+<select id="mySelect" style=" position: absolute;left: 788px;
+    top: 297px;
+    height: 16px;
+    width: 156px; background-color: #e1e1e1; font-size: 11px; visibility: hidden;" onchange="myFunction()">
+  <option value="Select">Select</option>
+  <option value="3sLP">3S LiPo</option>
+  <option value="4sLP">4S LiPo</option>
+  <option value="5sLP">5S LiPo</option>
+  <option value="6sLP">6S LiPo</option>
+</select>
+
+
+      <img src="images/transbox.png"  id="trans_v1"style=" position: absolute; left: 704px; top: 349px; height: 15px; width: 45px; visibility:hidden; border: 2px dashed red;" onclick="trans_v1()" />
+
+       <input type="number" name="input_v1" id="input_v1" style=" position: absolute; height: 13px;
+    width: 38px;   
+    outline: none;
+    top: 349px;
+    left: 704px; visibility:hidden; font-size: 11px; color:red; border: 1px solid green; ">
+
+       <img src="images/transbox.png"  id="trans_v2"style=" position: absolute; left: 768px;
+    top: 348px;
+    height: 17px;
+    width: 49px; visibility:hidden; border: 2px dashed red;" onclick="trans_v2()" />
+
+         <input type="number" name="input_v2" id="input_v2" style="position: absolute; height: 13px; width: 38px; top: 349px; left: 772px; outline: none; visibility:hidden; font-size: 11px; color: black; border: 1px solid green; " >
+
+      <img src="images/transbox.png"  id="trans_v3"style=" position: absolute; left: 700px; top: 435px; height:17px; width: 49px; visibility:hidden; border: 2px dashed red;" onclick="trans_v3()" />
+
+        <input type="number" name="input_v3" id="input_v3" style="height: 13px;
+    width: 38px;
+    position: absolute;
+    outline: none;
+    top: 436px;
+    left: 704px;visibility:hidden; font-size: 11px; color: red; border: 1px solid green; ">
+
+     <img src="images/transbox.png"  id="trans_v4"style=" position: absolute; left: 769px; top: 435px; height:17px; width: 49px; visibility:hidden; border: 2px dashed red;" onclick="trans_v4()" />
+
+  <input type="number" name="input_v4" id="input_v4" style="height: 13px;
+    width: 38px;
+    position: absolute;
+    outline: none;
+    top: 436px;
+    left: 772px; visibility:hidden; font-size: 11px; color: black; border: 1px solid green; " >
+
+<img id="trans_limit_optn1" class="blink_me" src="images/transbox.png" style="position: absolute;
+    top: 167px;
+    left: 843px;
+    width: 60px;
+    height: 25px;
+    border-radius: 10px;
+    border: 4px dashed red; visibility: hidden; cursor: pointer;" onclick="trans_limit_optn1()"> 
+
+<img id="limitdflt_tb" class="blink_me" src="images/transbox.png" style="position: absolute;
+    top: 480px;
+    left: 1021px;
+    width: 70px;
+    height: 25px;
+    border-radius: 10px;
+    border: 4px dashed red; visibility: hidden; cursor: pointer;" onclick="limitdeflt_tb1()">
+
+
+<img id="tools_tb" class="blink_me" src="images/transbox.png" style="position: absolute;
+    left: 657px;
+    top: 105px;
+    width: 55px;
+    height: 55px;
+    border-radius: 10px;
+    border: 4px dashed red; visibility: hidden; cursor: pointer;" onclick="tools_optn()">
+
+<img id="tooladvance_tb" class="blink_me" src="images/transbox.png" style="position: absolute;
+    left: 680px;
+    top: 351px;
+    width: 65px;
+    height: 22px;
+    border-radius: 10px;
+    border: 4px dashed red; visibility: hidden; cursor: pointer;" onclick="advancetool_tb()">
+
+<img id="upgrade_tb" class="blink_me" src="images/transbox.png" style="position: absolute;
+    left: 717px;
+    top: 105px;
+    width: 55px;
+    height: 55px;
+    border-radius: 10px;
+    border: 4px dashed red; visibility: hidden; cursor: pointer;" onclick="upgrade_optn()">
+
+<img id="info_tb" class="blink_me" src="images/transbox.png" style="position: absolute;
+    left: 777px;
+    top: 105px;
+    width: 55px;
+    height: 55px;
+    border-radius: 10px;
+    border: 4px dashed red; visibility: hidden; cursor: pointer;" onclick="info_optn()">
+
+<img id="mv2close" class="blink_me" src="images/transbox.png" style="position: absolute;
+        left: 1077px;
+    top: 70px;
+    width: 40px;
+    height: 35px;
+    border-radius: 10px;
+    border: 4px dashed red; visibility: hidden; cursor: pointer;" onclick="mv2close()">
+
+     
+<img id="mv2_tb" class="blink_me" src="images/transbox.png" style="position: absolute;
+    left: 354px;
+    top: 270px;
+    width: 58px;
+    height: 77px;
+    border-radius: 10px;
+    border: 4px dashed red; visibility: hidden; cursor: pointer;" onclick="openmv2()">
+
+
+<img src="images/transbox.png" id="trans_r" style="border: 2px dashed rgb(81, 255, 11); position: absolute; left: 35px; top: 315px; height: 85px; width: 85px; border-radius: 50px; visibility: hidden; cursor: -webkit-grab; cursor: grab;" onclick="trans_r()">
+
+<img src="images/transbox.png" id="trans_r2" style="border: 2px dashed rgb(81, 255, 11); position: absolute; left: 35px; top: 315px; height: 85px; width: 85px; border-radius: 50px; visibility: hidden; cursor: -webkit-grab; cursor: grab;" onclick="trans_r2()">
+
+<img src="images/transbox.png" id="trans_r3" style="border: 2px dashed rgb(81, 255, 11); position: absolute; left: 232px; top: 315px; height: 85px; width: 85px; border-radius: 50px; visibility: hidden; cursor: -webkit-grab; cursor: grab;" onclick="trans_r3()">
+
+<img src="images/transbox.png" id="trans_r4" style="border: 2px dashed rgb(81, 255, 11); position: absolute; left: 232px; top: 315px; height: 85px; width: 85px; border-radius: 50px; visibility: hidden; cursor: -webkit-grab; cursor: grab;" onclick="trans_r4()">
+
+
+<img src="images/transbox.png" id="trans_rc1" style="border: 2px dashed rgb(81, 255, 11); position: absolute; left: 35px; top: 315px; height: 85px; width: 85px; border-radius: 50px; visibility:  hidden; cursor: -webkit-grab; cursor: grab;" onclick="trans_rc1()">
+
+<img src="images/transbox.png" id="trans_rc2" style="border: 2px dashed rgb(81, 255, 11); position: absolute; left: 35px; top: 315px; height: 85px; width: 85px; border-radius: 50px; visibility:  hidden; cursor: -webkit-grab; cursor: grab;" onclick="trans_rc2()">
+
+<img src="images/transbox.png" id="trans_rc3" style="border: 2px dashed rgb(81, 255, 11); position: absolute; left: 35px; top: 315px; height: 85px; width: 85px; border-radius: 50px; visibility:  hidden; cursor: -webkit-grab; cursor: grab;" onclick="trans_rc3()">
+
+<img src="images/transbox.png" id="trans_rc4" style="border: 2px dashed rgb(81, 255, 11); position: absolute; left: 232px; top: 315px; height: 85px; width: 85px; border-radius: 50px; visibility: hidden; cursor: -webkit-grab; cursor: grab;" onclick="trans_rc4()">
+
+<img src="images/transbox.png" id="trans_rc5" style="border: 2px dashed rgb(81, 255, 11); position: absolute; left: 232px; top: 315px; height: 85px; width: 85px; border-radius: 50px; visibility: hidden; cursor: -webkit-grab; cursor: grab;" onclick="trans_rc5()">
+
+<img src="images/transbox.png" id="trans_rc6" style="border: 2px dashed rgb(81, 255, 11); position: absolute; left: 232px; top: 315px; height: 85px; width: 85px; border-radius: 50px; visibility: hidden; cursor: -webkit-grab; cursor: grab;" onclick="trans_rc6()">
+
+<img src="images/arowright.png" class="blink_me3" id="remote_bigarrow" style="position: absolute; left: 382px; top: 395px; height: 85px; visibility: hidden;">
+<!-- Steps Start here -->
+
+
+<div id="stepcan5_1" class="step" style=" position: absolute; left: 450px;
+    top: 275px;
+    height: 55px;
+    width: 200px; display: none; " >
+  <span style="position: absolute; left: 5px; top: 7px; font-size: 18px; font-weight: bold;">Click on NAZA M V2 icon to open it.</span>
+</div>
+
+<span class="blink_me" id="stpcan5_arw1" style="position: absolute;
+    font-size: 40px;
+    left: 420px;
+    top: 280px;
+    color: #ff0000;
+    visibility: hidden;" ><strong><i class="fa fa-arrow-left"></i></strong></span>
+
+
+<div id="stepcan5_2" class="step" style=" position: absolute; left: 805px;
+    top: 275px;
+    height: 55px;
+    width: 200px; display: none; " >
+  <span style="position: absolute; left: 5px; top: 7px; font-size: 18px; font-weight: bold;">Click on SKIP to start Software.</span>
+</div>
+
+<span class="blink_me" id="stpcan5_arw2" style="position: absolute;
+    font-size: 40px;
+    left: 890px;
+    top: 325px;
+    color: #ff0000;
+    visibility: hidden;" ><strong><i class="fa fa-arrow-down"></i></strong></span>
+
+<div id="stepcan5_3" class="step" style=" position: absolute; left: 335px;
+    top: 465px;
+    height: 55px;
+    width: 220px; display: none; " >
+  <span style="position: absolute; left: 5px; top: 7px; font-size: 18px; font-weight: bold;">Click on Transmitter power button to turn on.</span>
+</div>
+
+<span class="blink_me" id="stpcan5_arw3" style="position: absolute;
+    font-size: 40px;
+    left: 300px;
+    top: 475px;
+    color: #ff0000;
+    visibility: hidden;" ><strong><i class="fa fa-arrow-left"></i></strong></span>
+
+<div id="stepcan5_4" class="step" style=" position: absolute; left: 5px;
+    top: 185px;
+    height: 75px;
+    width: 170px; display: none; " >
+  <span style="position: absolute; left: 5px; top: 7px; font-size: 18px; font-weight: bold;">Click on Throttle to check the channel monitor.</span>
+</div>
+
+<span class="blink_me" id="stpcan5_arw4" style="position: absolute;
+    font-size: 40px;
+    left: 60px;
+    top: 262px;
+    color: #ff0000;
+    visibility: hidden;" ><strong><i class="fa fa-arrow-down"></i></strong></span>
+
+
+<div id="stepcan5_5" class="step" style=" position: absolute; left: 5px;
+    top: 185px;
+    height: 75px;
+    width: 170px; display: none; " >
+  <span style="position: absolute; left: 5px; top: 7px; font-size: 18px; font-weight: bold;">Click on Yaw to check the channel monitor.</span>
+</div>
+
+<span class="blink_me" id="stpcan5_arw5" style="position: absolute;
+    font-size: 40px;
+    left: 60px;
+    top: 262px;
+    color: #ff0000;
+    visibility: hidden;" ><strong><i class="fa fa-arrow-down"></i></strong></span>
+
+<div id="stepcan5_6" class="step" style=" position: absolute; left: 185px;
+    top: 185px;
+    height: 75px;
+    width: 170px; display: none; " >
+  <span style="position: absolute; left: 5px; top: 7px; font-size: 18px; font-weight: bold;">Click on pitch to check the channel monitor.</span>
+</div>
+
+<span class="blink_me" id="stpcan5_arw6" style="position: absolute;
+    font-size: 40px;
+    left: 260px;
+    top: 262px;
+    color: #ff0000;
+    visibility: hidden;" ><strong><i class="fa fa-arrow-down"></i></strong></span>
+
+
+<div id="stepcan5_7" class="step" style=" position: absolute; left: 185px;
+    top: 185px;
+    height: 75px;
+    width: 170px; display: none; " >
+  <span style="position: absolute; left: 5px; top: 7px; font-size: 18px; font-weight: bold;">Click on Roll to check the channel monitor.</span>
+</div>
+
+<span class="blink_me" id="stpcan5_arw7" style="position: absolute;
+    font-size: 40px;
+    left: 260px;
+    top: 262px;
+    color: #ff0000;
+    visibility: hidden;" ><strong><i class="fa fa-arrow-down"></i></strong></span>
+
+
+<div id="stepcan5_8" class="step" style=" position: absolute; left: 475px;
+    top: 5px;
+    height: 52px;
+    width: 170px; display: none; " >
+  <span style="position: absolute; left: 5px; top: 7px; font-size: 18px; font-weight: bold;">Click on Basic Option.</span>
+</div>
+
+<span class="blink_me" id="stpcan5_arw8" style="position: absolute;
+    font-size: 40px;
+    left: 548px;
+    top: 56px;
+    color: #ff0000;
+    visibility: hidden;" ><strong><i class="fa fa-arrow-down"></i></strong></span>
+
+
+<div id="stepcan5_9" class="step" style=" position: absolute; left: 735px;
+    top: 115px;
+    height: 55px;
+    width: 180px; display: none; " >
+  <span style="position: absolute; left: 5px; top: 7px; font-size: 18px; font-weight: bold;">Now select the type of Drone.</span>
+</div>
+
+<span class="blink_me" id="stpcan5_arw9" style="position: absolute;
+    font-size: 40px;
+    left: 805px;
+    top: 170px;
+    color: #ff0000;
+    visibility: hidden;" ><strong><i class="fa fa-arrow-down"></i></strong></span>
+
+
+<div id="stepcan5_10" class="step" style=" position: absolute; left: 855px;
+    top: 385px;
+    height: 55px;
+    width: 110px; display: none; " >
+  <span style="position: absolute; left: 5px; top: 7px; font-size: 18px; font-weight: bold;"> Click on motor test.</span>
+</div>
+
+<span class="blink_me" id="stpcan5_arw10" style="position: absolute;
+    font-size: 40px;
+    left: 900px;
+    top: 440px;
+    color: #ff0000;
+    visibility: hidden;" ><strong><i class="fa fa-arrow-down"></i></strong></span>
+
+<div id="stepcan5_11" class="step" style=" position: absolute; left: 725px;
+    top: 120px;
+    height: 75px;
+    width: 210px; display: none; " >
+  <span style="position: absolute; left: 5px; top: 7px; font-size: 18px; font-weight: bold;">Click on Motor M1 and check the motor orientation.</span>
+</div>
+
+<span class="blink_me" id="stpcan5_arw11" style="position: absolute;
+    font-size: 40px;
+    left: 807px;
+    top: 200px;
+    color: #ff0000;
+    visibility: hidden;" ><strong><i class="fa fa-arrow-down"></i></strong></span>
+
+
+<div id="stepcan5_12" class="step" style=" position: absolute; left: 572px;
+    top: 120px;
+    height: 75px;
+    width: 210px; display: none; " >
+  <span style="position: absolute; left: 5px; top: 7px; font-size: 18px; font-weight: bold;">Click on Motor M2 and check the motor orientation.</span>
+</div>
+
+<span class="blink_me" id="stpcan5_arw12" style="position: absolute;
+    font-size: 40px;
+    left: 664px;
+    top: 200px;
+    color: #ff0000;
+    visibility: hidden;" ><strong><i class="fa fa-arrow-down"></i></strong></span>
+
+<div id="stepcan5_13" class="step" style=" position: absolute; left: 577px;
+    top: 477px;
+    height: 75px;
+    width: 210px; display: none; " >
+  <span style="position: absolute; left: 5px; top: 7px; font-size: 18px; font-weight: bold;">Click on Motor M3 and check the motor orientation.</span>
+</div>
+
+<span class="blink_me" id="stpcan5_arw13" style="position: absolute;
+    font-size: 40px;
+        left: 668px;
+    top: 430px;
+    color: #ff0000;
+    visibility: hidden;" ><strong><i class="fa fa-arrow-up"></i></strong></span>
+
+<div id="stepcan5_14" class="step" style=" position: absolute; left: 715px;
+    top: 477px;
+    height: 75px;
+    width: 210px; display: none; " >
+  <span style="position: absolute; left: 5px; top: 7px; font-size: 18px; font-weight: bold;">Click on Motor M4 and check the motor orientation.</span>
+</div>
+
+<span class="blink_me" id="stpcan5_arw14" style="position: absolute;
+    font-size: 40px;
+    left: 808px;
+    top: 430px;
+    color: #ff0000;
+    visibility: hidden;" ><strong><i class="fa fa-arrow-up"></i></strong></span>
+
+<div id="stepcan5_15" class="step" style=" position: absolute; left: 465px;
+    top: 60px;
+    height: 55px;
+    width: 170px; display: none; " >
+  <span style="position: absolute; left: 5px; top: 7px; font-size: 18px; font-weight: bold;">Click on Mounting option.</span>
+</div>
+
+<span class="blink_me" id="stpcan5_arw15" style="position: absolute;
+    font-size: 40px;
+    left: 545px;
+    top: 118px;
+    color: #ff0000;
+    visibility: hidden;" ><strong><i class="fa fa-arrow-down"></i></strong></span>
+
+<div id="stepcan5_16" class="step" style=" position: absolute; left: 730px;
+    top: 465px;
+    height: 55px;
+    width: 220px; display: none; " >
+  <span style="position: absolute; left: 5px; top: 7px; font-size: 18px; font-weight: bold;">Click on Default option to set it as default.</span>
+</div>
+
+<span class="blink_me" id="stpcan5_arw16" style="position: absolute;
+    font-size: 40px;
+    left: 980px;
+    top: 470px;
+    color: #ff0000;
+    visibility: hidden;" ><strong><i class="fa fa-arrow-right"></i></strong></span>
+
+<div id="stepcan5_17" class="step" style=" position: absolute;     left: 725px;
+    top: 157px;
+    height: 45px;
+    width: 179px; display: none; " >
+  <span style="position: absolute;     left: 15px;
+    top: 15px; font-size: 18px; font-weight: bold;">Click on RC option.</span>
+</div>
+
+<span class="blink_me" id="stpcan5_arw17" style="position: absolute;
+    font-size: 40px;
+        left: 673px;
+    top: 154px;
+    color: #ff0000;
+    visibility: hidden;" ><strong><i class="fa fa-arrow-left"></i></strong></span>
+
+<!-- <div id="stepcan5_18" class="step" style=" position: absolute; left: 335px;
+    top: 465px;
+    height: 55px;
+    width: 220px; display: none; " >
+  <span style="position: absolute; left: 5px; top: 7px; font-size: 18px; font-weight: bold;">20) Click on Add button.</span>
+</div>
+
+<span class="blink_me" id="stpcan5_arw18" style="position: absolute;
+    font-size: 40px;
+    left: 300px;
+    top: 475px;
+    color: #ff0000;
+    visibility: hidden;" ><strong><i class="fa fa-arrow-left"></i></strong></span> -->
+
+<div id="stepcan5_19" class="step" style=" position: absolute; left: 951px;
+    top: 351px;
+    height: 42px;
+    width: 195px; display: none; " >
+  <span style="position: absolute; left: 16px;
+    top: 12px; font-size: 18px; font-weight: bold;">Click on Start Button.</span>
+</div>
+
+<span class="blink_me" id="stpcan5_arw19" style="position: absolute;
+    font-size: 40px;
+    left: 905px;
+    top: 354px;
+    color: #ff0000;
+    visibility: hidden;" ><strong><i class="fa fa-arrow-left"></i></strong></span>
+
+<div id="stepcan5_20" class="step" style=" position: absolute; left: 5px;
+    top: 187px;
+    height: 75px;
+    width: 230px; display: none; " >
+  <span style="position: absolute; left: 5px; top: 7px; font-size: 18px; font-weight: bold;">Click on Throttle and Yaw one by one and check the stick calibrations.</span>
+</div>
+
+<span class="blink_me" id="stpcan5_arw20" style="position: absolute;
+    font-size: 40px;
+    left: 60px;
+    top: 275px;
+    color: #ff0000;
+    visibility: hidden;" ><strong><i class="fa fa-arrow-down"></i></strong></span>
+    
+<div id="stepcan5_21" class="step" style=" position: absolute; left: 5px;
+    top: 187px;
+    height: 75px;
+    width: 230px; display: none; " >
+  <span style="position: absolute; left: 5px; top: 7px; font-size: 18px; font-weight: bold;">Click on Pitch and Radar one by one and check the stick calibrations.</span>
+</div>
+
+<span class="blink_me" id="stpcan5_arw21" style="position: absolute;
+    font-size: 40px;
+    left: 60px;
+    top: 275px;
+    color: #ff0000;
+    visibility: hidden;" ><strong><i class="fa fa-arrow-down"></i></strong></span>
+
+    <div id="stepcan5_22" class="step" style=" position: absolute; left: 5px;
+    top: 187px;
+    height: 75px;
+    width: 230px; display: none; " >
+  <span style="position: absolute; left: 5px; top: 7px; font-size: 18px; font-weight: bold;">Click on Pitch and Radar one by one and check the stick calibrations.</span>
+</div>
+
+<span class="blink_me" id="stpcan5_arw22" style="position: absolute;
+    font-size: 40px;
+    left: 60px;
+    top: 275px;
+    color: #ff0000;
+    visibility: hidden;" ><strong><i class="fa fa-arrow-down"></i></strong></span>
+
+    <span class="blink_me" id="stpcan5_arw22_2" style="position: absolute;
+    font-size: 40px;
+    left: 260px;
+    top: 275px;
+    color: #ff0000;
+    visibility: hidden;" ><strong><i class="fa fa-arrow-down"></i></strong></span>
+
+    <div id="stepcan5_23" class="step" style=" position: absolute; left: 123px;
+    top: 104px; height: 83px; width: 265px; display: none; " >
+  <span style="position: absolute; left: 5px; top: 7px; font-size: 18px; font-weight: bold;">Click on three position switch one by one to check GPS, Altitude and Manual Modes.</span>
+</div>
+
+    <span class="blink_me" id="stpcan5_arw23" style="position: absolute;
+    font-size: 40px;
+     left: 250px;
+    top: 195px;
+    color: #ff0000;
+    visibility: hidden;" ><strong><i class="fa fa-arrow-down"></i></strong></span>
+
+   <div id="stepcan5_24" class="step" style=" position: absolute;  left: 770px;
+    top: 157px;
+    height: 45px;
+    width: 179px; display: none; " >
+  <span style="position: absolute; left: 8px;
+    top: 15px; font-size: 18px; font-weight: bold;">Click on Gain Option.</span>
+</div>
+
+<span class="blink_me" id="stpcan5_arw24" style="position: absolute;
+    font-size: 40px;
+    left: 727px;
+    top: 154px;
+    color: #ff0000;
+    visibility: hidden;" ><strong><i class="fa fa-arrow-left"></i></strong></span>
+
+     <div id="stepcan5_25" class="step" style=" position: absolute;left: 593px;
+    top: 141px;
+    height: 83px;
+    width: 278px; display: none; " >
+  <span style="position: absolute; left: 5px; top: 7px; font-size: 18px; font-weight: bold;">Click on Basic Gain Option & Altitude Gain Option one by one to set Aircraft gains manually.</span>
+</div>
+
+    <span class="blink_me" id="stpcan5_arw25" style="position: absolute;
+    font-size: 40px;
+    left: 754px;
+    top: 228px;
+    color: #ff0000;
+    visibility: hidden;" ><strong><i class="fa fa-arrow-down"></i></strong></span>
+
+    <div id="stepcan5_optnbasic" class="step" style=" position: absolute;     left: 889px;
+    top: 20px;
+    height: 163px;
+    width: 265px; display:none; " >
+  <span style=" position: absolute;
+    left: 100px;
+    top: 10px;
+    font-size: 20px; font-weight: bold;"><u>Basic Gain</u></span><br>
+
+  <span style="position: absolute; left: 46px;
+    top: 49px; font-size: 18px; ">Pitch= 120, Roll= 120, <br>Yaw= 120, Vertical= 200</span><br>
+
+  <span style="position: absolute; left: 80px;
+    top: 105px; font-size: 18px; font-weight: bold;"><u>Attitude Gain</u></span><br>
+
+  <span style="position: absolute;     left: 55px;
+    top: 135px; font-size: 18px; ">Pitch= 220, Roll= 220</span>
+
+</div>
+
+
+<div id="stepcan5_26" class="step" style=" position: absolute; left: 535px;
+    top: 4px;
+    height: 45px;
+    width: 200px; display: none; " >
+  <span style="position: absolute; left: 8px;
+    top: 5px; font-size: 18px; font-weight: bold;">Click on Advance Option.</span>
+</div>
+
+<span class="blink_me" id="stpcan5_arw26" style="position: absolute;
+    font-size: 40px;
+    left: 608px;
+    top: 55px;
+    color: #ff0000;
+    visibility: hidden;" ><strong><i class="fa fa-arrow-down"></i></strong></span>
+
+    <div id="stepcan5_27" class="step" style=" position: absolute; left: 775px;top: 344px; height: 53px; width: 200px; display: none; " >
+  <span style="position: absolute; left: 8px; top: 7px; font-size: 18px; font-weight: bold;">Select recommended Option.</span>
+</div>
+
+<span class="blink_me" id="stpcan5_arw27" style="position: absolute;
+    font-size: 40px;
+      left: 865px;
+    top: 291px;
+    color: #ff0000;
+    visibility: hidden;" ><strong><i class="fa fa-arrow-up"></i></strong></span>
+
+<div id="stepcan5_28" class="step" style=" position: absolute; left: 646px;
+    top: 148px;
+    height: 61px;
+    width: 200px; display: none; " >
+  <span style="position: absolute; left: 2px; top: 15px; font-size: 18px; font-weight: bold;">Click on Fail Safe (F/S) Option.</span>
+</div>
+
+<span class="blink_me" id="stpcan5_arw28" style="position: absolute;
+    font-size: 40px;
+       left: 604px;
+    top: 155px;
+    color: #ff0000;
+    visibility: hidden;" ><strong><i class="fa fa-arrow-left"></i></strong></span>
+
+    <div id="stepcan5_29" class="step" style=" position: absolute;      left: 785px; top: 90px;
+    height: 70px;
+    width: 200px; display: none; " >
+  <span style="position: absolute; left: 8px;
+    top: 15px; font-size: 18px; font-weight: bold;">Choose Go home and landing Option.</span>
+</div>
+
+<span class="blink_me" id="stpcan5_arw29" style="position: absolute;
+    font-size: 40px;
+    left: 872px;
+    top: 167px;
+    color: #ff0000;
+    visibility: hidden;" ><strong><i class="fa fa-arrow-down"></i></strong></span>
+
+
+    <div id="stepcan5_30" class="step" style=" position: absolute; left: 716px; top: 157px;
+    height: 47px;
+    width: 200px; display: none; " >
+  <span style="position: absolute; left: 20px;
+    top: 15px; font-size: 18px; font-weight: bold;">Click on IOC Option.</span>
+</div>
+
+<span class="blink_me" id="stpcan5_arw30" style="position: absolute;
+    font-size: 40px;
+       left: 665px;
+    top: 155px;
+    color: #ff0000;
+    visibility: hidden;" ><strong><i class="fa fa-arrow-left"></i></strong></span>
+
+
+    <div id="stepcan5_31" class="step" style=" position: absolute; left: 555px; top: 85px;
+    height: 70px;
+    width: 238px; display: none; " >
+  <span style="position: absolute; left: 8px;
+    top: 15px; font-size: 18px; font-weight: bold;">Click on intelligent orientation control Option.</span>
+</div>
+
+<span class="blink_me" id="stpcan5_arw31" style="position: absolute;
+    font-size: 40px;
+      left: 658px;
+    top: 165px;
+    color: #ff0000;
+    visibility: hidden;" ><strong><i class="fa fa-arrow-down"></i></strong></span>
+
+    <div id="stepcan5_32" class="step" style=" position: absolute;      left: 768px;
+    top: 148px;
+    height: 51px;
+    width: 200px; display: none; " >
+  <span style="position: absolute;      left: 7px;
+    top: 15px; font-size: 18px; font-weight: bold;">Click on Gimbal Option.</span>
+</div>
+
+<span class="blink_me" id="stpcan5_arw32" style="position: absolute;
+    font-size: 40px;
+       left: 728px;
+    top: 155px;
+    color: #ff0000;
+    visibility: hidden;" ><strong><i class="fa fa-arrow-left"></i></strong></span>
+
+
+    <div id="stepcan5_33" class="step" style=" position: absolute;     left: 700px;
+    top: 465px;
+    height: 55px;
+    width: 260px; display: none; " >
+  <span style="position: absolute; left: 5px; top: 7px; font-size: 18px; font-weight: bold;">Click on Default button to set the device level default.</span>
+</div>
+
+<span class="blink_me" id="stpcan5_arw33" style="position: absolute;
+    font-size: 40px;
+    left: 980px;
+    top: 470px;
+    color: #ff0000;
+    visibility: hidden;" ><strong><i class="fa fa-arrow-right"></i></strong></span>
+
+    <div id="stepcan5_34" class="step" style=" position: absolute;    left: 835px;  top: 148px;
+    height: 50px;
+    width: 212px; display: none; " >
+  <span style="position: absolute;      left: 10px;
+    top: 15px; font-size: 18px; font-weight: bold;">Click on H3/4 3D Option.</span>
+</div>
+
+<span class="blink_me" id="stpcan5_arw34" style="position: absolute;
+    font-size: 40px;
+       left: 790px;
+    top: 155px;
+    color: #ff0000;
+    visibility: hidden;" ><strong><i class="fa fa-arrow-left"></i></strong></span>
+
+<div id="stepcan5_35" class="step" style=" position: absolute;    left: 895px;  top: 148px;
+    height: 50px;
+    width: 212px; display: none; " >
+  <span style="position: absolute;      left: 10px;
+    top: 15px; font-size: 18px; font-weight: bold;">Click on Voltage Option.</span>
+</div>
+
+<span class="blink_me" id="stpcan5_arw35" style="position: absolute;
+    font-size: 40px;
+       left: 855px;
+    top: 155px;
+    color: #ff0000;
+    visibility: hidden;" ><strong><i class="fa fa-arrow-left"></i></strong></span>
+
+    <div id="stepcan5_37" class="step" style=" position: absolute;       left: 740px;
+    top: 470px;
+    height: 40px;
+    width: 215px; display: none; " >
+  <span style="position: absolute;     left: 15px;
+    top: 12px; font-size: 18px; font-weight: bold;">Click on Default Button.</span>
+</div>
+
+<span class="blink_me" id="stpcan5_arw37" style="position: absolute;
+    font-size: 40px;
+    left: 980px;
+    top: 470px;
+    color: #ff0000;
+    visibility: hidden;" ><strong><i class="fa fa-arrow-right"></i></strong></span>
+
+
+    <div id="stepcan5_38" class="step" style=" position: absolute;     left: 535px;
+    top: 4px;
+    height: 46px;
+    width: 272px; display: none; " >
+  <span style="position: absolute;     left: 8px;
+    top: 5px; font-size: 18px; font-weight: bold;">Click on Tools Option to do Basic and Advance calibrations.</span>
+</div>
+
+<span class="blink_me" id="stpcan5_arw38" style="position: absolute;
+    font-size: 40px;
+         left: 666px;
+    top: 55px;
+    color: #ff0000;
+    visibility: hidden;" ><strong><i class="fa fa-arrow-down"></i></strong></span>
+
+
+    <div id="stepcan5_39" class="step" style=" position: absolute;     left: 800px;
+    top: 335px;
+    height: 45px;
+    width: 200px; display: none; " >
+  <span style="position: absolute;     left: 8px;
+    top: 5px; font-size: 18px; font-weight: bold;">Click on Advance option.</span>
+</div>
+
+<span class="blink_me" id="stpcan5_arw39" style="position: absolute;
+    font-size: 40px;
+           left: 758px;
+    top: 338px;
+    color: #ff0000;
+    visibility: hidden;" ><strong><i class="fa fa-arrow-left"></i></strong></span>
+
+
+    <div id="stepcan5_40" class="step" style=" position: absolute; left: 635px; top: 4px;
+    height: 45px;
+    width: 200px; display: none; " >
+  <span style="position: absolute; left: 8px;
+    top: 5px; font-size: 18px; font-weight: bold;">Click on Upgrade option.</span>
+</div>
+
+<span class="blink_me" id="stpcan5_arw40" style="position: absolute;
+    font-size: 40px;
+         left: 730px;
+    top: 55px;
+    color: #ff0000;
+    visibility: hidden;" ><strong><i class="fa fa-arrow-down"></i></strong></span>
+
+    <div id="stepcan5_41" class="step" style=" position: absolute;      left: 695px;
+    top: 4px;
+    height: 45px;
+    width: 200px; display: none; " >
+  <span style="position: absolute;         left: 18px;
+    top: 14px; font-size: 18px; font-weight: bold;">Click on Info option.</span>
+</div>
+
+<span class="blink_me" id="stpcan5_arw41" style="position: absolute;
+    font-size: 40px;
+         left: 788px;
+    top: 55px;
+    color: #ff0000;
+    visibility: hidden;" ><strong><i class="fa fa-arrow-down"></i></strong></span>
+
+
+    <div id="stepcan5_42" class="step" style=" position: absolute;      left: 805px;
+    top: 62px;
+    height: 45px;
+    width: 200px; display: none; " >
+  <span style="position: absolute; left: 15px;
+    top: 12px; font-size: 18px; font-weight: bold;">Click on close button.</span>
+</div>
+
+<span class="blink_me" id="stpcan5_arw42" style="position: absolute;
+    font-size: 40px;
+        left: 1038px;
+    top: 61px;
+    color: #ff0000;
+    visibility: hidden;" ><strong><i class="fa fa-arrow-right"></i></strong></span>
+
+
+    <div id="stepcan5_43" class="step" style=" position: absolute;     left: 695px;
+    top: 62px;
+    height: 63px;
+    width: 200px; display: none; " >
+  <span style="position: absolute; left: 10px;
+    top: 12px; font-size: 18px; font-weight: bold;">Click on moniter screen for zoom out.</span>
+</div>
+
+
+<img id="scrolldowngif_bhu" src="images/pressure.gif" style="position: absolute;     left: 747px;
+    top: 125px; height: 120px; visibility: hidden;">
+
+
+    
+
+
+<!-- Steps Stop here -->
+    <img id="fullscreen15up_tb" src="images/transbox.png" style="position: absolute;
+    left: 880px;
+    border: 0px solid red;
+    top: 374px;
+    height: 22px;
+    width: 70px; visibility: hidden; cursor: pointer;" onclick="nextnaza1()">
+  
+
+
+<img src="images/transbox.png" id="nextcan6" style="position: absolute; left: 346px;
+    top: 60px;
+    height: 515px;
+    width: 830px; cursor: zoom-out; visibility: hidden;" onclick="nextcan6()">
+
+</div>
+
+
+<!-- ==============================CANVAS66=========================== -->
+
+ <!-- Scene 66 -->
+
+
+
+<div class="simsubscreen" id="canvas66" style="visibility: hidden; background-image: url(images/b4.jpg);" >
+
+  <audio id="aud_congo1mrk_can6">
+        <source src="audios/congo1mrk.mp3" type="audio/mpeg">
+  </audio>
+
+
+  <div id="" style=" position: absolute; left: 0px; top: 0px; height: 609px; width: 1199px; font-size: 21px; opacity: 0.4; background-color: black;
+  " >
+
+</div>
+
+
+<!-------------------------MCQ canvas66-------------------------------->
+
+<div id="question2" style=" position: absolute; width: 845px; height: 412px; left: 155px; top: 85px;padding: 10px; border: 7px solid white; background-image: linear-gradient(45deg, #ffd8cb, #e9e4f0); " >
+
+<span style="font-size: 30px; font-weight: bold; margin-left: 320px; margin-right: 150px;" > <u>Test Your Memory</u></span>
+
+<span style="font-size: 22px; font-weight: bold; position: absolute; top: 20px;
+    left: 655px;" > Total Marks:</span>
+
+<!-- <span id="mrk_00" style="font-size: 22px; font-weight: bold; position: absolute; top: 20px; left: 790px;" > </span>
+ -->
+<span id="mrk_02" style="font-size: 22px; font-weight: bold; position: absolute; top: 20px; left: 790px; visibility: ;" > </span>
+
+<span style="position: absolute; left: 50px; top: 80px; font-size: 24px; font-weight: bold;" >Q2.</span>
+
+<span style="position: absolute; left: 90px; top: 80px; font-size: 24px; font-weight: bold;">To set aircraft gains we provide ________.
+</span>
+
+    <br>
+
+     <span  style="position: absolute; left: 45px; top: 160px; font-size: 24px;"><strong> A </strong>&nbsp;&nbsp;<input type="radio" name="q2" id="optionA2" value="Incorrect Answer">&nbsp;Advance Gain & Altitude Gain<br></span>
+
+       <span style="position: absolute; left: 455px; top: 160px; font-size: 24px;"><strong> B</strong> &nbsp;&nbsp;<input type="radio" name="q2" id="optionB2" value="Correct Answer">&nbsp;Advance Gain & Basic Gain<br></span>
+
+      <span style="position: absolute; left: 45px; top: 260px; font-size: 24px;"><strong>C </strong>&nbsp;&nbsp;<input type="radio" name="q2" id="optionC2" value="Incorrect Answer">&nbsp;Angular Rate & Basic Gain<br></span>
+
+      <span style="position: absolute; left: 455px; top: 260px; font-size: 24px;"><strong> D</strong> &nbsp;&nbsp;<input type="radio" name="q2" id="optionD2" value="Incorrect Answer">&nbsp;Basic Gain & Altitude Gain<br></span>
+
+    <div id="ans_can6" style= "color:red; left: 330px; top: 338px; position: absolute; font-size: 30px; font-weight: bold;">
+    </div>
+
+    <div id="got_mrkcan6" style= "color:black; left: 305px; top: 387px; position: absolute; font-size: 22px; font-weight: bold; visibility: hidden;">Congrats !! You get "1" mark.
+    </div>
+
+    <input type="button" id="showans_can6" style="position:absolute; left: 640px;
+    top: 340px; cursor:pointer; font-size: 19px; background-color: #501b26; font-family: 'Acme', sans-serif; padding-top: 5px; color:  #FFF; border: 3px solid white; padding-bottom: 5px;" value="&nbsp;Submit&nbsp;" onclick="ansshw_c6()"/>
+
+    <input type="button" id="nextButton6" style="position:absolute; left: 770px;
+    top: 370px; cursor:pointer; font-size: 19px; background-color: #501b26; visibility:hidden; font-family: 'Acme', sans-serif; padding-top: 5px; color:  #FFF; border: 3px solid white; padding-bottom: 5px;" value="&nbsp;Next&nbsp;" onclick="navNext7()"/>
+
+
+</div>
+
+<!-------------------------MCQ canvas66-------------------------------->
+
+
+</div>
+
+
+<!-- ==============================CANVAS66=========================== -->
+
+
+<!-- ==============================CANVAS8=========================== -->
+
+ <!-- Scene 8-->
+
+
+
+<div class="simsubscreen" id="canvas88" style="visibility: hidden; background-image: url(images/b4.jpg);" >
+
+  <audio id="aud_congo1mrk_can8">
+        <source src="audios/congo1mrk.mp3" type="audio/mpeg">
+  </audio>
+
+
+  <div id="" style=" position: absolute; left: 0px; top: 0px; height: 609px; width: 1199px; font-size: 21px; opacity: 0.4; background-color: black;
+  " >
+
+</div>
+
+
+<!-------------------------MCQ canvas88-------------------------------->
+
+<div id="question3" style=" position: absolute; width: 845px; height: 412px; left: 155px; top: 85px;padding: 10px; border: 7px solid white; background-image: linear-gradient(45deg, #ffd8cb, #e9e4f0); " >
+
+<span style="font-size: 30px; font-weight: bold; margin-left: 320px; margin-right: 150px;" > <u>Test Your Memory</u></span>
+
+<span style="font-size: 22px; font-weight: bold; position: absolute; top: 20px;
+    left: 655px;" > Total Marks:</span>
+
+<!-- <span id="mrk_00" style="font-size: 22px; font-weight: bold; position: absolute; top: 20px; left: 790px;" > </span>
+ -->
+<span id="mrk_03" style="font-size: 22px; font-weight: bold; position: absolute; top: 20px; left: 790px; visibility: ;" > </span>
+
+<span style="position: absolute; left: 50px; top: 80px; font-size: 24px; font-weight: bold;" >Q3.</span>
+
+<span style="position: absolute; left: 90px; top: 80px; font-size: 24px; font-weight: bold;">For basic and advance calibrations we select _______ option.
+</span>
+
+    <br>
+
+     <span  style="position: absolute; left: 45px; top: 160px; font-size: 24px;"><strong> A </strong>&nbsp;&nbsp;<input type="radio" name="q3" id="optionA3" value="Incorrect Answer">&nbsp;Advanced<br></span>
+
+       <span style="position: absolute; left: 455px; top: 160px; font-size: 24px;"><strong> B</strong> &nbsp;&nbsp;<input type="radio" name="q3" id="optionB3" value="Correct Answer">&nbsp;Basic<br></span>
+
+      <span style="position: absolute; left: 45px; top: 260px; font-size: 24px;"><strong>C </strong>&nbsp;&nbsp;<input type="radio" name="q3" id="optionC3" value="Incorrect Answer">&nbsp;Tools<br></span>
+
+      <span style="position: absolute; left: 455px; top: 260px; font-size: 24px;"><strong> D</strong> &nbsp;&nbsp;<input type="radio" name="q3" id="optionD3" value="Incorrect Answer">&nbsp;Upgrade<br></span>
+
+    <div id="ans_can8" style= "color:red; left: 330px; top: 338px; position: absolute; font-size: 30px; font-weight: bold;">
+    </div>
+
+    <div id="got_mrkcan8" style= "color:black; left: 305px; top: 387px; position: absolute; font-size: 22px; font-weight: bold; visibility: hidden;">Congrats !! You get "1" mark.
+    </div>
+
+    <input type="button" id="showans_can8" style="position:absolute; left: 640px;
+    top: 340px; cursor:pointer; font-size: 19px; background-color: #501b26; font-family: 'Acme', sans-serif; padding-top: 5px; color:  #FFF; border: 3px solid white; padding-bottom: 5px;" value="&nbsp;Submit&nbsp;" onclick="ansshw_c8()"/>
+
+    <input type="button" id="nextButton8" style="position:absolute; left: 770px;
+    top: 370px; cursor:pointer; font-size: 19px; background-color: #501b26; visibility:hidden; font-family: 'Acme', sans-serif; padding-top: 5px; color:  #FFF; border: 3px solid white; padding-bottom: 5px;" value="&nbsp;Next&nbsp;" onclick="navNext9()"/>
+
+
+</div>
+
+<!-------------------------MCQ canvas88-------------------------------->
+
+
+</div>
+
+
+<!-- ==============================CANVAS88=========================== -->
+
+
+
+
+<div class="simsubscreen" id="canvas6" style="visibility: hidden; background-image: url(images/b4.jpg);" >
+
+    <audio id="aud_stp5_44">
+        <source src="audios/stp5_44.mp3" type="audio/mpeg">
+  </audio>
+
+
+<img src="images/table.png" style="position: absolute;
+    left: 20px;
+    top: 533px;
+    width: 1155px;
+    height: 120px;">
+
+<img src="images/table2.png" style="position: absolute;
+    left: 10px;
+    top: 410px;
+    width: 1174px;
+    height: 160px;">
+
+
+
+<img src="images/fullpcon1.png" style="    position: absolute;
+        left: 20px;
+    top: 75px;
+    width: 1100px;
+    height: 470px;visibility:  ;">
+
+<div id="stepcan5_44" class="step" style=" position: absolute; left: 692px;
+    top: 225px; height: 80px; width: 375px; display: none;  border-radius: 0px;" >
+
+  <span style="position: absolute; left: 10px; top: 16px;font-size: 18px; font-weight: bold;">Software Installation & Callibration Successfully Completed</span>
+
+   
+</div>
+
+<input type="button" id="nextButtonlast" style="position:absolute; left: 1120px;
+    top: 535px; cursor:pointer; font-size: 19px; background-color: #501b26; visibility:hidden; font-family: 'Acme', sans-serif; padding-top: 5px; color:  #FFF; border: 3px solid white; padding-bottom: 5px;" value="&nbsp;Next&nbsp;" onclick="navNext_result()"/>
+
+</div>
+
+
+
+<!-- ==============================CANVAS16=========================== -->
+
+ <!-- Scene 16-->
+
+
+
+<div class="simsubscreen" id="canvas16" style="visibility: hidden; background-image: url(images/b4.jpg);" >
+
+
+  <table  style="position: absolute; border: 1px solid white; height: 300px; width: 1090px; left: 55px; top: 85px; color: black; background-color: white; font-weight: bold; " border="1">
+    <tr style="text-align: center; font-size: 20px;">
+      <td >
+        Question
+      </td>
+
+      <td>
+        Correct Answer
+      </td>
+
+      <!-- <td>
+        Your Answer
+      </td>
+
+      <td>
+        Marks Obtained
+      </td> -->
+    </tr>
+
+    <tr style=" font-size: 18px;">
+      <td style="padding-left: 10px; ">
+         Q1. Official website of drone.
+      </td>
+
+      <td style="text-align: center;">
+        dji.com
+      </td>
+
+      <!-- <td>
+        
+      </td>
+
+      <td>
+        
+      </td> -->
+    </tr>
+
+    <tr style=" font-size: 18px;">
+      <td style="padding-left: 10px;">
+         Q2. To set aircraft gains we provide ________.
+      </td>
+
+      <td style="text-align: center;">
+        Basic Gain & Altitude Gain
+      </td>
+
+     <!--  <td>
+        
+      </td>
+
+      <td>
+        
+      </td> -->
+    </tr>
+
+
+    <tr style=" font-size: 18px;">
+      <td style="padding-left: 10px;">
+         Q3. For basic and advance calibrations we select _______ option.
+      </td>
+
+      <td style="text-align: center;">
+        Tools
+      </td>
+
+      <!-- <td>
+        
+      </td>
+
+      <td>
+        
+      </td> -->
+    </tr>
+
+
+    <!-- <tr style=" font-size: 18px;">
+      <td style="padding-left: 10px;">
+        Q4. How many landing gears are used in a quadcopter?
+      </td>
+
+      <td style="text-align: center;">
+        4
+      </td> -->
+
+      <!-- <td>
+        
+      </td>
+
+      <td>
+        
+      </td> -->
+    <!-- </tr> -->
+
+
+    <!-- <tr style=" font-size: 18px;">
+      <td style="padding-left: 10px;">
+        Q5. Propellers work by spinning from the force applied by the _______.
+      </td>
+
+      <td style="text-align: center;">
+         Motor
+      </td> -->
+
+      <!-- <td>
+        
+      </td>
+
+      <td>
+        
+      </td> -->
+    <!-- </tr> -->
+
+
+    <!-- <tr style=" font-size: 18px;">
+      <td style="padding-left: 10px;">
+         Q6. GPS module allows to know _______.
+      </td>
+
+      <td style="text-align: center;">
+        Location
+      </td> -->
+
+      <!-- <td>
+        
+      </td>
+
+      <td>
+        
+      </td> -->
+    <!-- </tr> -->
+
+  </table>
+
+  <div style="position: absolute; font-weight: bold;    left: 460px;
+    top: 445px; background-color: white; border: 1px solid black; height: 50px; width: 290px; font-size: 18px;"><span style="position: absolute;left: 18px;
+    top: 10px;">Total Marks Obtained :</span>
+
+  <span style="position: absolute;left: 240px;
+    top: 10px;">/ 6</span>
+
+    <span id="totalmarks" style="position: absolute;left: 225px;
+    top: 10px;"></span></div>
+
+  <div style="position: absolute; font-weight: bold;   left: 414px;
+    top: 525px;background-color: white; border: 1px solid black; height: 50px; width: 393px; font-size: 18px;"><span style="position: absolute;left: 18px;
+    top: 10px;">Thank You For Performing the Experiment</span></div>
+
+</div>
+
+<!-- ================================================================ -->
+<!-- ================================================================ -->
+<!-- ==================================================================== -->
+<!-- ===================================================================== -->
+<!-- ==================================================================== -->
+
+
+
+
+     <!-- Don't Write Code Below This Line -->
+<!-- ========================================== -->
+</div> <!---firsstdiv--->
+
+<div style="text-align: center; font-size: 12px; width:1200px; border:1px solid steelblue; position: relative; border-top:none; color: #FFF; background-color: steelblue; height: 30px; padding-top: 5px; padding-bottom: 5px">
+  <table align="center" width="100%">
+          <tr>
+               <!-- <td style="color: #FFF; text-align:left; width:33%; padding-left:20px;" > <button > naveen</button>  
+              </td>-->
+              <td style="text-align:center; width:33%">
+                  <!--Visitors -->
+                <!-- Start of WebFreeCounter Code -->
+                   <!--  <a href="https://www.webfreecounter.com/" target="_blank"><img src="https://www.webfreecounter.com/hit.php?id=gmeqdxpc&nd=6&style=8" border="0" alt="hit counter"></a> -->
+                <!-- End of WebFreeCounter Code -->
+              </td>
+              <!-- <td style="text-align:right; width:33%; padding-right:20px;"> 
+                  Developed by <a href="https://www.virtuality.org.in/" target="_blank" style="color: #FFF; text-decoration: none;"> Virtuality</a>
+              </td>-->
+          </tr>
+      </table>
+      </div>  
+<!-- <script src="main.js"></script> -->
+<script type="text/javascript" src="main.js"></script>
+        </td>
+      </tr>
+    </table>
+<script src="../assets/js/iframeResize.js"></script>
+        
+        </body>
+
+<script>
+  $(window).load(function() {
+    $('#loading').hide();
+
+    // dronefirstcome()
+  });
+</script>
+
+</html>
